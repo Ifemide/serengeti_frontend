@@ -1,0 +1,130 @@
+.container {
+	padding: 2.5em 5em;
+	background: #fff;
+}
+
+.auth-container {
+    padding: 0em 5em;
+}
+
+.auth-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.auth-title {
+    font-size: 2.75em;
+    margin: 0em;
+    font-weight: 400;
+}
+
+.logo-group {
+    display: flex;
+    align-items: center;
+}
+
+.logo-group img {
+    margin-right: .25em;
+}
+
+.auth-type {
+    margin: 4em 0em;
+    display: flex;
+    align-items: center;
+}
+
+.auth-type p {
+    margin: 0em;
+    color: #56555d;
+    cursor: pointer;
+}
+
+.auth-type .divider {
+    height: 1.25em;
+    border-right: 1px solid grey;
+    margin: 0em 1em;
+}
+
+.auth-type .visible {
+    font-size: 1.25em;
+    font-weight: 400;
+}
+
+form {
+    margin-bottom: 1em;
+}
+
+.form-inputs {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-inputs label, .form-inputs input {
+    display: block;
+}
+
+.form-inputs-col {
+    flex-basis: 47.5%;
+}
+
+.form-inputs-col:first-child {
+    margin-right: 2em;
+}
+
+.form-inputs-col input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid grey;
+    height: 3em;
+    outline: none;
+    margin-bottom: 1.75em;
+    font-size: 1em;
+}
+
+.form-inputs-col label {
+    color: #56555d;
+}
+
+.form-inputs-col input:active, .form-inputs-col input:focus {
+    border-bottom: 1px solid gold;
+}
+
+.submit {
+    width: 18em;
+    height: 3em;
+    margin: 0 auto;
+}
+
+.submit button {
+    border: none;
+    background: black;
+    color: white;
+    width: 18em;
+    height: 3em;
+    text-shadow: none;
+    font-size: 1em;
+    text-align: center;
+}
+
+.social-box p {
+    width: 18em;
+    height: 3em;
+    line-height: 3em;
+    text-align: center;
+    color: #ffffff;
+    margin: 0 auto;
+    margin-bottom: 1em;
+}
+
+.social-box p.facebook {
+    background: #0d47a1;
+}
+
+.social-box p.google {
+    background: #ce5321;
+}
+
+/*.sign-in-form .auth-view,
+.sign-up-form .auth-view {
+    display: none;
+}*/

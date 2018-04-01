@@ -1,0 +1,64 @@
+<div class="container">
+
+<div class="auth-container">
+  <div class="auth-type">
+    <p class="login" [class.visible]="signIn" (click)="showSignInForm()">Sign In</p>
+    <p class="divider"></p>
+    <p class="signup" [class.visible]="signUp" (click)="showSignUpForm()">Sign Up</p>
+  </div>
+
+  <div class="sign-up-form" *ngIf="signUp">
+    <form>
+      <div class="form-inputs">
+        <div class="form-inputs-col col1">
+          <label for="firstname">Name</label>
+          <input id="firstname" name="firstname" type="text" placeholder="">
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="">
+        </div>
+
+        <div class="form-inputs-col col2">
+          <label for="phone-number">Phone Number</label>
+          <input id="phone-number" name="phone-number" type="number" placeholder="">
+
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password">
+        </div>
+      </div>
+      <div class="submit">
+        <button>Create Account</button>
+      </div>
+    </form>
+
+    <div class="social-box">
+      <p class="facebook">Sign Up with Facebook</p>
+      <p class="google">Sign Up with Google</p>
+    </div>
+  </div>
+
+  <div class="sign-in-form" class="auth-view" *ngIf="signIn">
+    <form>
+      <div class="form-inputs">
+        <div class="form-inputs-col">
+          <label for="email">Name</label>
+          <input id="email" name="email" type="email" placeholder="e.g. Joshua">
+        </div>
+        <div class="form-inputs-col">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password">
+        </div>
+      </div>
+      <div class="submit">
+        <button>Sign In</button>
+      </div>
+    </form>
+
+    <div class="social-box">
+      <p class="facebook">Sign In with Facebook</p>
+      <p class="google">Sign In with Google</p>
+    </div>
+  </div>
+</div>
+
+</div>

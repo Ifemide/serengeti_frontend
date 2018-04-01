@@ -1,0 +1,121 @@
+.container {
+	padding: 2.5em 5em;
+	background: #fff;
+}
+
+.welcome-container {
+	padding: 3em 4em 0em 4em;
+}
+
+.title-bar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.welcome-title {
+    font-size: 2.75em;
+    margin: 0em;
+    font-weight: 400;
+}
+
+.welcome-text {
+	text-align: center;
+}
+
+.welcome-text h2 {
+	margin: 1.8em 0em 1em 0em;
+	font-size: 2.5em;
+    font-weight: 400;
+}
+
+.welcome-text p {
+	margin-bottom: 4em;
+}
+
+
+/*
+
+	END OF WELCOME!
+
+*/
+
+
+.apply-container {
+	background: black;
+	color: white;
+	padding: 2em 4em;
+}
+
+.apply-title {
+	font-size: 2.75em;
+    margin: 0em 0em .1em 0em;
+    font-weight: 400;
+}
+
+.title-desc {
+	font-size: 1.25em;
+	opacity: 0.5;
+	display: flex;
+	align-items: center;
+}
+
+.title-desc p {
+	margin: 0em;
+}
+
+.title-desc .divider {
+    height: 1.25em;
+    border-right: 1px solid grey;
+    margin: 0em 1em;
+}
+
+.files-bar, .file-section, .file, .file-edit {
+	display: flex;
+	align-items: center;
+}
+
+.files-bar {
+	justify-content: space-between;
+}
+
+.file {
+	margin-right: 7.5em;
+}
+
+.file span {
+	width: 2.5em;
+	height: 2.5em;
+	background: rgba(253, 186, 19, 0.3);
+	border-radius: 3px;
+	margin-right: 1.2em;
+}
+
+.file-edit p {
+	margin-right: 1.8em;
+	font-weight: bold;
+	font-size: 0.85em;
+	color: #fdba13;
+}
+
+.add-file p {
+	width: 7.5em;
+	height: 2.5em;
+	line-height: 2.5em;
+	text-align: center;
+	background: white;
+	color: black;
+	font-weight: bold;
+	border-radius: 3px;
+}
+
+.apply-button {
+	width: 22.5em;
+	height: 2.5em;
+	font-weight: bold;
+	line-height: 2.5em;
+	text-align: center;
+	background: white;
+	color: black;
+	font-weight: bold;
+	border-radius: 3px;
+}

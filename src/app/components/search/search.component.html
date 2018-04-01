@@ -1,0 +1,157 @@
+<div class="container">
+
+<form class="search-bar">
+  <select name="ad-location">
+    <option value="vi">Victoria Island, Lagos</option>
+    <option value="yb">Yaba, Ebute-Meta, Lagos</option>
+  </select>
+  <p class="divider"></p>
+  <select name="ad-type">
+    <option value="bb">Billboard</option>
+    <option value="pro">PRO Ads</option>
+  </select>
+  <button>GO!</button>
+</form>
+
+<div class="search-content">
+  <div class="filter">
+    <form>
+      <div class="board-cats">
+        <input id="static" type="checkbox" name="board-cat" value="static" checked>
+        <label for="static">Static</label>
+        <input id="dynamic" type="checkbox" name="board-cat" value="dynamic" checked>
+        <label for="dynamic">Dynamic</label>
+      </div>
+      <div class="size-filter">
+        <div class="size-filter-top" [ngClass]="{'dark top': showSizes }" (click)="showSizeOptions()">
+          <p>All Sizes</p>
+          <img src="assets/ic-play-arrow-24-px.svg">
+        </div>
+        <div class="size-filter-options" *ngIf="showSizes">
+          <input id="big-size" type="checkbox" name="board-size" value="big-size">
+          <label for="big-size">2000 x 400</label>
+          <input id="small-size" type="checkbox" name="board-size" value="small-size">
+          <label for="small-size">1500 x 300</label>
+          <input id="medium-size" type="checkbox" name="board-size" value="medium-size">
+          <label for="medium-size">1800 x 350</label>
+        </div>
+      </div>
+
+      <div class="type-filter">
+        <div class="type-filter-top" [ngClass]="{'dark top': showTypes }" (click)="showTypeOptions()">
+          <p>All Types</p>
+          <img src="assets/ic-play-arrow-24-px.svg">
+        </div>
+        <div class="type-filter-options" *ngIf="showTypes">
+          <input id="flag-pole" type="checkbox" name="board-type" value="flag-pole">
+          <label for="flag-pole">Flag Poles</label>
+          <input id="mobile-screen" type="checkbox" name="board-type" value="mobile-screen">
+          <label for="mobile-screen">Mobile Screens</label>
+          <input id="wall-drape" type="checkbox" name="board-type" value="wall-drape">
+          <label for="wall-drape">Wall Drapes</label>
+          <input id="gantry" type="checkbox" name="board-type" value="gantry">
+          <label for="gantry">Gantries</label>
+          <input id="led-cube" type="checkbox" name="board-type" value="led-cube">
+          <label for="led-cube">LED Cubes</label>
+          <input id="other" type="checkbox" name="board-type" value="other">
+          <label for="other">Others</label>
+        </div>
+      </div>
+
+      <div class="price-filter">
+        <div class="price-filter-top" [ngClass]="{'dark top': showPrices }" (click)="showPriceOptions()">
+          <p>Price Range</p>
+          <img src="assets/ic-play-arrow-24-px.svg">
+        </div>
+        <div class="price-range-dialogs" *ngIf="showPrices">
+          <div class="range-thumb-track">
+            <label>Range</label>
+            <input type="range" name="">
+          </div>
+          <div class="range-numbers">
+            <label>From</label>
+            <span>
+              <input type="number" name="">
+              <label>To</label>
+              <input type="number" name="">
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="price-range">
+						<select name="bb-price">
+							<option value="">Price</option>
+						</select>
+						<div class="price-range-dialogs">
+							<div class="range-thumb-track">
+								<label>Range</label>
+								<input type="range" name="">
+							</div>
+							<div class="range-numbers">
+								<label>From</label>
+								<span>
+									<input type="number" name="">
+									<label>To</label>
+									<input type="number" name="">
+								</span>
+							</div>
+						</div> 
+						<div class="button-wrapper">
+							<button>Apply</button>
+						</div>
+					</div>-->
+    </form>
+  </div>
+  <!-- <div class="loader" ng-show="loading" ng-click="showTinz()">
+    <h1>content is loading fuck off!!!</h1>
+  </div> -->
+  <div class="search-results" ng-hide="loading">
+    <!-- <div class="search-result" ng-repeat="x in data" > -->
+    <div class="search-result">
+      <img class="main-img" src="assets/background.png">
+      <img class="certified show" src="assets/award.png">
+      <div class="search-result-text">
+        <h4>Lagos, Adeola-Odeku, VI <!--{{whereWeAre}} --></h4> 
+        <div class="search-result-details">
+          <p>Digital Board</p>
+          <p class="divider">|</p>
+          <p>2019 x 3200</p>
+          <p>|</p>
+          <p>From N3.5m</p>
+        </div>
+        <button>Explore</button>
+      </div>
+    </div>
+    <div class="search-result">
+      <img class="main-img" src="assets/background.png">
+      <div class="search-result-text">
+        <h4>Lagos, Adeola-Odeku, VI</h4>
+        <div class="search-result-details">
+          <p>Digital Board</p>
+          <p class="divider">|</p>
+          <p>2019 x 3200</p>
+          <p>|</p>
+          <p>From N3.5m</p>
+        </div>
+        <button>Explore</button>
+      </div>
+    </div>
+    <div class="search-result">
+      <img class="main-img" src="assets/background.png">
+      <div class="search-result-text">
+        <h4>Lagos, Adeola-Odeku, VI</h4>
+        <div class="search-result-details">
+          <p>Digital Board</p>
+          <p class="divider">|</p>
+          <p>2019 x 3200</p>
+          <p>|</p>
+          <p>From N3.5m</p>
+        </div>
+        <button>Explore</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>

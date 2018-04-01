@@ -1,0 +1,72 @@
+.nav, .logo-group, .menu {
+	display: flex;
+	align-items: center;
+}
+
+.nav {
+	justify-content: space-between;
+	margin: 0em 4em;
+}
+
+.logo-group {
+	cursor: pointer;
+}
+
+.logo-group img {
+    margin-right: .5em;
+}
+
+.menu {
+	list-style-type: none;
+}
+
+.menu li {
+	margin-right: 1.25em;
+}
+
+.menu li a {
+	text-decoration: none;
+	color: #1d1c21;
+}
+
+.menu ul li.sell-board:hover {
+	background: #ffbd00;
+	color: #ffffff;
+}
+
+.sell-board {
+	padding: .25em 1.75em;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+/* .menu ul {
+  	list-style-type: none;
+  	display: flex;
+}
+
+.menu ul li {
+ 	margin-right: 1.5em;
+	line-height: 2.5em;
+}
+
+.menu ul li a {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.menu ul li.sell-board {
+  	margin-right: 6em;
+	width: 11em;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.menu ul li.sell-board a {
+	color: #1d1c21;
+}
+
+.menu ul li.sell-board:hover {
+	background: #ffbd00;
+	color: #ffffff;
+} */

@@ -1,0 +1,29 @@
+.footer {
+	margin: 50px auto;
+}
+
+.footer-content {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+.footer-column {
+	list-style-type: none;
+	width: 150px;
+	margin: 0px 100px 0px 0px;
+	padding: 0px;
+}
+
+.footer-column-header {
+	text-transform: uppercase;
+	color: #ffbd00;
+}
+
+.fa-google-plus-square, .fa-facebook-square,
+.fa-instagram, .fa-twitter-square, .fa-linkedin,
+.fa-vimeo {
+	font-size: 2em;
+	color: #ffbd00;
+	margin-right: 40px;
+}

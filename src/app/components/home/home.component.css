@@ -1,0 +1,443 @@
+.whitish {
+	color: #ffffff;
+}
+
+.slide {
+	position: relative;
+}
+
+.slide .slide-img {
+	width: 100%;
+}
+
+.header {
+	position: absolute;
+	width: 100%;
+	top: 1.5em;
+	left: 0em;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.jumbo-pack-content {
+	margin-left: 4em;
+}
+
+.jumbo-pack {
+	position: absolute;
+	top: 12em;
+}
+
+.jumbo-pack-content .jumbo-text {
+	margin: 0em;
+}
+
+.jumbo-text {
+	font-size: 3.5em;
+	margin: 0em 1.2em;
+	font-weight: 300;
+}
+
+.jumbo-pack .jumbo-text {
+	margin-top: 0em;
+	margin-bottom: 0.75em;
+}
+
+.jumbo-small {
+	font-size: 2.5em;
+	font-weight: 300;
+}
+
+.section-head {
+	margin: 5em 0em 2.5em 0em;
+}
+
+form {
+	background: rgba(233, 239, 244, 0.48);
+	padding: 5px;
+	border-radius: 5px;
+	margin-top: 1.05em;
+	margin-bottom: 1.75em;
+	display: flex;
+	align-items: flex-start;
+}
+
+	/*
+	Possibly a drop-down icon that can be used:
+	http://i62.tinypic.com/15xvbd5.png
+	*/
+
+form select {
+	border: none;
+    border-radius: none;
+    outline: none;
+    background: none;
+    text-shadow: none;
+	color: #979797;
+	background: #ffffff;
+	font-size: 0.9em;
+	padding: 1.5em;
+	height: 2em;
+	margin-right: .75em;
+}
+
+form .location {
+	width: 20em;
+}
+
+form .ad-type {
+	width: 7em;
+}
+
+form .submit {
+	border: none;
+	line-height: 2em;
+	padding: .25em .5em;
+	background: #1d1c21;
+	color: #ffffff;
+	font-size: .8em;
+	border-radius: 4px;
+	/*margin-left: 0.8em;*/
+}
+
+.jumbo-pack-content a {
+	color: #ffbd00;
+	opacity: 0.75;
+}
+
+.jumbo-pack-content a:hover {
+	color: #ffbd00;
+	opacity: 1;
+}
+
+
+	/*
+		END
+		OF
+		HEADER AND SLIDES
+	*/
+
+
+
+.works-section-group {
+	display: flex;
+	justify-content: center;
+}
+
+.works-section-content {
+	max-width: 15em;
+	margin-right: 2em;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	text-align: center;
+}
+
+.top-bar {
+	text-align: center;
+}
+
+.top-bar-content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.top-bar-content p {
+	width: 14em;
+	text-decoration: line-through;
+}
+
+.top-bar .sub-title {
+	margin-top: 0em;
+	margin-bottom: 2em;
+}
+
+.side-lines {
+	width: 8em;
+	border-bottom: 1px solid #1d1c21;
+}
+
+.fontawesome {
+	margin: 0 auto;
+	background: #1d1c21;
+	width: 2.5em;
+	height: 2.5em;
+	border-radius: 1.25em;
+	font-size: 3em;
+	line-height: 2.5em;
+}
+
+.outdoor-media {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.outdoor-media-group, .right-row-one {
+	display: flex;
+	justify-content: center;
+}
+
+.section-aside {
+	padding: 0em;
+	margin: 0em;
+}
+
+/*
+30.6 x 12.8
+14.4 x 12.8
+14.4 x 27.2
+*/
+
+.img-small {
+	width: 14em;
+	height: 12.5em;
+	background-color: gold;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.img-large-h {
+	width: 30em;
+	height: 12.5em;
+	background-color: lightcoral;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: #ffffff;
+}
+
+.img-large-v {
+	width: 14em;
+	height: 26.9em;
+	background-color: lightcoral;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: #ffffff;
+}
+
+.img-small:hover {
+	/*width: 260px;
+	height: 230px;*/
+	background-color: black;
+	color: #ffffff;
+}
+
+.img-large-h:hover {
+	/*width: 550px;
+	height: 230px;*/
+	background-color: deepskyblue;
+	color: #1d1c21;
+}
+
+.img-large-v:hover {
+	/*width: 260px;
+	height: 490px;*/
+	background-color: deepskyblue;
+	color: #1d1c21;
+}
+
+.right-row-one {
+	display: flex;
+	justify-content: space-between;
+}
+
+.right-row-one-group {
+	display: flex;
+	flex-direction: column;
+}
+
+.left-row-two, .left-row-three {
+	display: flex;
+	justify-content: space-between;
+}
+
+.down-30 {
+	margin-bottom: 30px;
+}
+
+.right-30 {
+	margin-right: 30px;
+}
+
+.desc-text {
+	font-size: 1.25em;
+	margin: 0px;
+}
+
+.desc-text span {
+	font-size: 0.9em;
+}
+
+.stand-prem {
+	display: flex;
+	justify-content: center;
+	color: #ffffff;
+}
+
+.prem {
+	max-width: 547px;
+	margin-right: 25px;
+	position: relative;
+}
+
+.stand {
+	max-width: 547px;
+	position: relative;
+}
+
+.stand-bg, .prem-bg {
+	width: 547px;
+	height: 587px;
+}
+
+.stand-content, .prem-content {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 120px;
+	left: 62px;
+}
+
+.stand-content .jumbo-text,
+.prem-content .jumbo-text{
+	margin: 0px;
+}
+
+.stand-content p, .prem-content p {
+	margin: 10px 0px 0px 2px;
+}
+
+.stand-content .side-lines,
+.prem-content .side-lines {
+	border: 1px solid #ffffff;
+}
+
+.badge {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 115px;
+	height: 115px;
+	background: #ffbd00;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.prem-content {
+	margin-right: 25px;
+}
+
+.campaign-slider {
+	margin: 80px 0px;
+}
+
+.start-campaign {
+	position: relative;
+}
+
+.start-campaign img {
+	width: 100%;
+}
+
+.start-campaign-content {
+	position: absolute;
+	text-align: right;
+	right: 75px;
+	top: 125px;
+}
+
+.start-campaign-content .whitish {
+	margin-bottom: 60px;
+}
+
+.start-campaign-content div {
+	width: 200px;
+	float: right;
+}
+
+.start-campaign-content div p {
+	margin: 0;
+}
+
+.audience-channels {
+	text-align: center;
+}
+
+.audience-channel-list {
+	display: flex;
+	flex-direction: column;
+}
+
+.audience-channels-title {
+	font-size: 24px;
+	margin: 0px 0px 60px 0px;
+}
+
+.list-row {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+.list-row div {
+	width: 180px;
+	height: 140px;
+	text-align: center;
+	border-left: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+.list-row .all-borders {
+	border-right: 1px solid #ccc;
+}
+
+.list-row div .fa-search {
+	font-size: 2.5em;
+	color: #ccc;
+	margin: 20px auto;
+}
+
+.list-row div i p {
+	margin: 10px auto;
+}
+
+div.pre-footer {
+	margin: 80px 0px 50px 0px;
+	width: 100%;
+	height: 20em;
+	background: #1d1c21;
+}
+
+.pre-footer-content {
+	text-align: center;
+	background: #1d1c21;
+	position: relative;
+}
+
+.pre-footer-content div {
+	position: absolute;
+	width: 100%;
+	top: 4em;
+	display: flex;
+	flex-direction: column;
+}
+
+.pre-footer-content div span.button-yellow {
+	padding: 15px 30px;
+}
+
+/* .pre-footer-content img {
+	width: 60em;
+	margin: 50px 10px;
+	text-align: center;
+} */
