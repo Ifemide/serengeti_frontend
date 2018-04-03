@@ -1,4 +1,12 @@
+import { ApiService } from './../../api.service';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import { HttpClient} from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 
 @Component({
   selector: 'app-search',
@@ -7,13 +15,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  public showSizes = false;
-  public showTypes = false;
-  public showPrices = false;
+  page: any; result: any; userId: any; params: any; query: any; mainForm: any; assets: any ;
 
-  constructor() { }
+  public showSizes = false; public showTypes = false; public showPrices = false;
 
-  ngOnInit() {
+  constructor(private _formBuilder: FormBuilder, private _api: ApiService, private _http: HttpClient) {
+    this._api.getAssets(location.href);
+    // this.getJSON().subscribe(data => {
+    this._http.get('assets/assets.json').subscribe(data => {
+     this.assets = data;
+    });
+
+    // console.log(this.assets);
+
+      this.mainForm = this._formBuilder.group({
+        'area': '',
+        'adtype': ''
+      });
+   }
+
+
+  goSearch(val) {
+    this.mainForm = val;
+    console.log(this.mainForm.value);
   }
 
   showSizeOptions() {
@@ -27,5 +51,13 @@ export class SearchComponent implements OnInit {
   showPriceOptions() {
     this.showPrices = !this.showPrices;
   }
+
+  ngOnInit() {
+
+  }
+
+  // public getJSON(): Observable<any> {
+  //   return this._http.get('assets/assets.json').map((res: any) => res.json());
+  // }
 
 }

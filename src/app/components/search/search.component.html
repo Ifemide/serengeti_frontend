@@ -1,12 +1,16 @@
+<div class="header">
+  <app-header></app-header>
+</div>
+
 <div class="container">
 
-<form class="search-bar">
-  <select name="ad-location">
+<form class="search-bar form-group" [formGroup]="mainForm" (onSubmit)="goSearch(mainForm)">
+  <select name="adlocation">
     <option value="vi">Victoria Island, Lagos</option>
     <option value="yb">Yaba, Ebute-Meta, Lagos</option>
   </select>
   <p class="divider"></p>
-  <select name="ad-type">
+  <select name="adtype">
     <option value="bb">Billboard</option>
     <option value="pro">PRO Ads</option>
   </select>
@@ -112,7 +116,7 @@
       <img class="main-img" src="assets/background.png">
       <img class="certified show" src="assets/award.png">
       <div class="search-result-text">
-        <h4>Lagos, Adeola-Odeku, VI <!--{{whereWeAre}} --></h4> 
+        <h4>Lagos, Adeola-Odeku, VI</h4> 
         <div class="search-result-details">
           <p>Digital Board</p>
           <p class="divider">|</p>

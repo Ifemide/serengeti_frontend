@@ -1,314 +1,334 @@
+<div class="header">
+  <app-header></app-header>
+</div>
+
 <div class="container">
 
 <form class="start-campaign">
   <h1>Start a Campaign</h1>
 
   <div class="start-campaign-menu">
-    <div class="active">
+    <div [class.active]="block1"  (click)="showBlock1()">
       <p>Identity</p>
     </div>
-    <div>
+    <div [class.active]="block2" (click)="showBlock2()">
       <p>Campaign Info</p>
     </div>
-    <div>
+    <div [class.active]="block3" (click)="showBlock3()">
       <p>Details</p>
     </div>
-    <div>
+    <div [class.active]="block4" (click)="showBlock4()">
       <p>Submission</p>
     </div>
   </div>
 
-  <div class="sub-menu" *ngIf="block1">
-    <p class="sub-menu-header">Company Details</p>
-    <div class="sub-menu-col-content">
-      <div class="sub-menu-col col-one">
-        <label for="comp-name">Company Name</label>
-        <input id="comp-name" name="comp-name" type="text" placeholder="">
+  <div *ngIf="block1">
+    <div class="sub-menu">
+      <p class="sub-menu-header">Company Details</p>
+      <div class="sub-menu-col-content">
+        <div class="sub-menu-col col-one">
+          <label for="comp-name">Company Name</label>
+          <input id="comp-name" name="comp-name" type="text" placeholder="">
 
-        <label for="cp-email">Contact Person Email</label>
-        <input id="cp-email" name="cp-email" type="email" placeholder="">
-      </div>
-      <div class="sub-menu-col col-two">
-        <label for="cp-name">Contact Person Name</label>
-        <input id="cp-name" name="cp-name" type="text" placeholder="">
-
-        <label for="cp-number">Contact Person Phone Number</label>
-        <input id="cp-number" name="cp-number" type="number" placeholder="">
-      </div>
-    </div>
-  </div>
-
-  <div class="sub-menu" *ngIf="block1">
-    <p class="sub-menu-header">Campaign Details</p>
-    <div class="sub-menu-col-content">
-      <div class="sub-menu-col col-one">
-        <label for="brand">Brand</label>
-        <input id="brand" name="brand" type="text" placeholder="">
-
-        <label for="camp-name">Campaign Name</label>
-        <input id="camp-name" name="camp-name" type="text" placeholder="">
-      </div>
-      <div class="sub-menu-col col-two">
-        <label for="start-date">Start Date</label>
-        <input id="start-date" name="start-date" type="date" placeholder="">
-
-        <label for="end-date">End Date</label>
-        <input id="end-date" name="end-date" type="date" placeholder="">
-      </div>
-    </div>
-  </div>
-
-  <div class="sub-menu" *ngIf="block2">
-    <p class="sub-menu-header">Campaign Measurement</p>
-    <div class="sub-menu-col-content">
-      <div class="sub-menu-col-one">
-        <input id="proximity" name="measurement" type="checkbox">
-        <label for="proximity">Proximity</label>
-
-        <input id="footfall" name="measurement" type="checkbox">
-        <label for="footfall">Footfall</label>
-
-        <input id="device-path" name="measurement" type="checkbox">
-        <label for="device-path">PATH - Collect Device ID's to retarget in THIS campaign</label>
-
-        <input id="audience" name="measurement" type="checkbox">
-        <label for="audience">Audience</label>
-      </div>
-    </div>
-  </div>
-
-  <div class="sub-menu" *ngIf="block2">
-    <p class="sub-menu-header">Demographic Details</p>
-    <div class="sub-menu-col-content">
-      <div class="sub-menu-3col col-1">
-        <p>Gender</p>
-        <input id="male" name="gender" type="checkbox">
-        <label for="male">Male</label>
-
-        <input id="female" name="gender" type="checkbox">
-        <label for="female">Female</label>
-      </div>
-      <div class="sub-menu-3col col-2">
-        <p>Age Group Target</p>
-        <input id="all-ages" name="age-group" type="checkbox">
-        <label for="all-ages">All Ages</label>
-
-        <input id="to24" name="age-group" type="checkbox">
-        <label for="to24">16-24</label>
-
-        <input id="to34" name="age-group" type="checkbox">
-        <label for="to34">25-34</label>
-
-        <input id="to44" name="age-group" type="checkbox">
-        <label for="to44">35-44</label>
-      </div>
-      <div class="sub-menu-3col col-3">
-        <p>Interests</p>
-        <select name="interest-cats">
-          <option value="">Select interest categories..</option>
-          <option value="ent">entertainment</option>
-          <option value="sport">sports</option>
-          <option value="bank">banking</option>
-          <option value="edu">education</option>
-          <option value="health">health</option>
-        </select>
-        <p class="interest">entertainment</p>
-        <p class="interest">sports</p>
-        <p class="interest">banking</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="sub-menu" *ngIf="block2">
-    <p class="sub-menu-header">Locations</p>
-    <p class="tagline">
-      Names & GPS cordinates of locations you want to target with your campaign
-    </p>
-
-    <div class="sub-menu-row-content">
-      <div class="sub-menu-row row-one">
-        <div>
-          <label for="gps-location">Location</label>
-          <input id="gps-location" type="text" name="gps-location">
+          <label for="cp-email">Contact Person Email</label>
+          <input id="cp-email" name="cp-email" type="email" placeholder="">
         </div>
-        <div>
-          <label for="latitude">Latitude</label>
-          <input id="latitude" type="text" name="latitude">
-        </div>
-        <div>
-          <label for="longitude">Longitude</label>
-          <input id="longitude" type="text" name="longitude">
-        </div>
-        <div>
-          <label for="geo-radius">Geo Location Radius</label>
-          <input id="geo-radius" type="text" name="geo-radius">
+        <div class="sub-menu-col col-two">
+          <label for="cp-name">Contact Person Name</label>
+          <input id="cp-name" name="cp-name" type="text" placeholder="">
+
+          <label for="cp-number">Contact Person Phone Number</label>
+          <input id="cp-number" name="cp-number" type="number" placeholder="">
         </div>
       </div>
-      <div class="sub-menu-row row-two">
-        <select name="ad-area">
-          <option value="">Choose Location..</option>
-          <option value="vi">Victoria Island</option>
-        </select>
-        <button class="add-new">+ Add New</button>
-      </div>
     </div>
-  </div>
 
-  <div class="sub-menu" *ngIf="block2">
-    <p class="sub-menu-header">Campaign Measurement</p>
-    <div class="sub-menu-col-content">
-      <div class="sub-menu-col col-one">
-        <input id="ctr" name="measure-ment" type="checkbox">
-        <label for="ctr">CTR%</label>
+    <div class="sub-menu">
+      <p class="sub-menu-header">Campaign Details</p>
+      <div class="sub-menu-col-content">
+        <div class="sub-menu-col col-one">
+          <label for="brand">Brand</label>
+          <input id="brand" name="brand" type="text" placeholder="">
 
-        <input id="foot-fall" name="measure-ment" type="checkbox">
-        <label for="foot-fall">Footfall</label>
-
-        <input id="uniques" name="measure-ment" type="checkbox">
-        <label for="uniques">Uniques</label>
-
-        <input id="vvtr" name="measure-ment" type="checkbox">
-        <label for="vvtr">Video View Through Rate</label>
-
-        <input id="leads" name="measure-ment" type="checkbox">
-        <label for="leads">Leads</label>
-      </div>
-    </div>
-  </div>
-  
-  <div class="sub-menu" *ngIf="block3">
-    <p class="sub-menu-header">Budget</p>
-    <div class="sub-menu-col-content">
-      <div class="sub-menu-col col-one">
-        <label for="gross-digital">Gross Budget (Digital)</label>
-        <input id="gross-digital" name="gross-digital" type="number" placeholder="">
-      </div>
-      <div class="sub-menu-col col-two">
-        <label for="gross-sms">Gross Budget (SMS)</label>
-        <input id="gross-sms" name="gross-sms" type="number" placeholder="">
-      </div>
-    </div>
-  </div>
-
-  <div class="sub-menu" *ngIf="block3">
-    <p class="sub-menu-header">Creatives</p>
-    <div class="sub-menu-col-content">
-      <div class="sub-menu-col col-one">
-        <p>Creative AD Format</p>
-        <input id="ctr" name="measure-ment" type="checkbox">
-        <label for="ctr">Standard Banners</label>
-
-        <input id="foot-fall" name="measure-ment" type="checkbox">
-        <label for="foot-fall">Richmedia (JS Tag using third party)</label>
-
-        <input id="uniques" name="measure-ment" type="checkbox">
-        <label for="uniques">Video</label>
-
-        <input id="vvtr" name="measure-ment" type="checkbox">
-        <label for="vvtr">Native</label>
-      </div>
-      <div class="sub-menu-col col-two">
-        <p>Gender</p>
-        <input id="male" name="gender" type="checkbox">
-        <label for="male">Male</label>
-
-        <input id="female" name="gender" type="checkbox">
-        <label for="female">Female</label>
-      </div>
-    </div>
-    <div class="sub-menu-row row-one margin-top">
-      <label for="dest-link">Destination Link</label><br>
-      <input id="dest-link" type="text" name="dest-link">
-    </div>
-  </div>
-
-  <div class="sub-menu" *ngIf="block3">
-    <p class="sub-menu-header">Required Documentation</p>
-    <p class="tagline"> Permitted files are jpeg, PNG, PDF, avi, mp4 </p>
-
-    <div class="sub-menu-col col-one margin-top">
-      <p>Upload Creatives <span class="tagline">(Banners, Videos, JS Tags)</span></p>
-      
-      <div class="files-bar">
-        <div class="file-section">
-          <div class="file">
-            <span class="file-base">
-              <img src="assets/file.svg">
-            </span>
-            <p>Hikoot_Clien_Pitch_V2.pdf</p>
-          </div>
-          <div class="file-edit">
-            <p>+ Add Note</p>
-            <p>Edit</p>
-            <p>Remove</p>
-          </div>
+          <label for="camp-name">Campaign Name</label>
+          <input id="camp-name" name="camp-name" type="text" placeholder="">
         </div>
-        <div class="add-file">
-          <p>+ Add Files</p>
+        <div class="sub-menu-col col-two">
+          <label for="start-date">Start Date</label>
+          <input id="start-date" name="start-date" type="date" placeholder="">
+
+          <label for="end-date">End Date</label>
+          <input id="end-date" name="end-date" type="date" placeholder="">
         </div>
       </div>
-      
-      <div class="file-drop">
-        <input id="creatives" name="creatives" type="file">
-        <label for="creatives"><img src="assets/cloud-upload.svg"> &nbsp; &nbsp; You can also drop your files here</label>
+    </div>
+    <button (click)="showBlock2()">NEXT</button>
+  </div>
+
+  <div *ngIf="block2">
+    <div class="sub-menu">
+      <p class="sub-menu-header">Campaign Measurement</p>
+      <div class="sub-menu-col-content">
+        <div class="sub-menu-col-one">
+          <input id="proximity" name="measurement" type="checkbox">
+          <label for="proximity">Proximity</label>
+
+          <input id="footfall" name="measurement" type="checkbox">
+          <label for="footfall">Footfall</label>
+
+          <input id="device-path" name="measurement" type="checkbox">
+          <label for="device-path">PATH - Collect Device ID's to retarget in THIS campaign</label>
+
+          <input id="audience" name="measurement" type="checkbox">
+          <label for="audience">Audience</label>
+        </div>
       </div>
     </div>
 
-    <div class="sub-menu-col col-one margin-top">
-      <p>Creative Assets
-        <span class="tagline">(If we need to create any creatives for you, 
-          kindly upload assets we will need)</span>
+    <div class="sub-menu">
+      <p class="sub-menu-header">Demographic Details</p>
+      <div class="sub-menu-col-content">
+        <div class="sub-menu-3col col-1">
+          <p>Gender</p>
+          <input id="male" name="gender" type="checkbox">
+          <label for="male">Male</label>
+
+          <input id="female" name="gender" type="checkbox">
+          <label for="female">Female</label>
+        </div>
+        <div class="sub-menu-3col col-2">
+          <p>Age Group Target</p>
+          <input id="all-ages" name="age-group" type="checkbox">
+          <label for="all-ages">All Ages</label>
+
+          <input id="to24" name="age-group" type="checkbox">
+          <label for="to24">16-24</label>
+
+          <input id="to34" name="age-group" type="checkbox">
+          <label for="to34">25-34</label>
+
+          <input id="to44" name="age-group" type="checkbox">
+          <label for="to44">35-44</label>
+        </div>
+        <div class="sub-menu-3col col-3">
+          <p>Interests</p>
+          <select name="interest-cats">
+            <option value="">Select interest categories..</option>
+            <option value="ent">entertainment</option>
+            <option value="sport">sports</option>
+            <option value="bank">banking</option>
+            <option value="edu">education</option>
+            <option value="health">health</option>
+          </select>
+          <p class="interest">entertainment</p>
+          <p class="interest">sports</p>
+          <p class="interest">banking</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-menu">
+      <p class="sub-menu-header">Locations</p>
+      <p class="tagline">
+        Names & GPS cordinates of locations you want to target with your campaign
       </p>
-    
-      <div class="files-bar">
-        <div class="file-section">
-          <div class="file">
-            <span class="file-base">
-              <img src="assets/file.svg">
-            </span>
-            <p>Hikoot_Clien_Pitch_V2.pdf</p>
+
+      <div class="sub-menu-row-content">
+        <div class="sub-menu-row row-one">
+          <div>
+            <label for="gps-location">Location</label>
+            <input id="gps-location" type="text" name="gps-location">
           </div>
-          <div class="file-edit">
-            <p>+ Add Note</p>
+          <div>
+            <label for="latitude">Latitude</label>
+            <input id="latitude" type="text" name="latitude">
+          </div>
+          <div>
+            <label for="longitude">Longitude</label>
+            <input id="longitude" type="text" name="longitude">
+          </div>
+          <div>
+            <label for="geo-radius">Geo Location Radius</label>
+            <input id="geo-radius" type="text" name="geo-radius">
+          </div>
+        </div>
+        <div class="sub-menu-row row-two">
+          <select name="ad-area">
+            <option value="">Choose Location..</option>
+            <option value="vi">Victoria Island</option>
+          </select>
+          <button class="add-new">+ Add New</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-menu">
+      <p class="sub-menu-header">Campaign Measurement</p>
+      <div class="sub-menu-col-content">
+        <div class="sub-menu-col col-one">
+          <input id="ctr" name="measure-ment" type="checkbox">
+          <label for="ctr">CTR%</label>
+
+          <input id="foot-fall" name="measure-ment" type="checkbox">
+          <label for="foot-fall">Footfall</label>
+
+          <input id="uniques" name="measure-ment" type="checkbox">
+          <label for="uniques">Uniques</label>
+
+          <input id="vvtr" name="measure-ment" type="checkbox">
+          <label for="vvtr">Video View Through Rate</label>
+
+          <input id="leads" name="measure-ment" type="checkbox">
+          <label for="leads">Leads</label>
+        </div>
+      </div>
+    </div>
+    <button (click)="showBlock1()">PREV</button> <button (click)="showBlock3()">NEXT</button>
+  </div>
+   
+  <div *ngIf="block3">
+    <div class="sub-menu">
+      <p class="sub-menu-header">Budget</p>
+      <div class="sub-menu-col-content">
+        <div class="sub-menu-col col-one">
+          <label for="gross-digital">Gross Budget (Digital)</label>
+          <input id="gross-digital" name="gross-digital" type="number" placeholder="">
+        </div>
+        <div class="sub-menu-col col-two">
+          <label for="gross-sms">Gross Budget (SMS)</label>
+          <input id="gross-sms" name="gross-sms" type="number" placeholder="">
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-menu">
+      <p class="sub-menu-header">Creatives</p>
+      <div class="sub-menu-col-content">
+        <div class="sub-menu-col col-one">
+          <p>Creative AD Format</p>
+          <input id="ctr" name="measure-ment" type="checkbox">
+          <label for="ctr">Standard Banners</label>
+
+          <input id="foot-fall" name="measure-ment" type="checkbox">
+          <label for="foot-fall">Richmedia (JS Tag using third party)</label>
+
+          <input id="uniques" name="measure-ment" type="checkbox">
+          <label for="uniques">Video</label>
+
+          <input id="vvtr" name="measure-ment" type="checkbox">
+          <label for="vvtr">Native</label>
+        </div>
+        <div class="sub-menu-col col-two">
+          <p>Gender</p>
+          <input id="male" name="gender" type="checkbox">
+          <label for="male">Male</label>
+
+          <input id="female" name="gender" type="checkbox">
+          <label for="female">Female</label>
+        </div>
+      </div>
+      <div class="sub-menu-row row-one margin-top">
+        <label for="dest-link">Destination Link</label><br>
+        <input id="dest-link" type="text" name="dest-link">
+      </div>
+    </div>
+
+    <div class="sub-menu">
+      <p class="sub-menu-header">Required Documentation</p>
+      <p class="tagline"> Permitted files are jpeg, PNG, PDF, avi, mp4 </p>
+
+      <div class="sub-menu-col col-one margin-top">
+        <p>Upload Creatives <span class="tagline">(Banners, Videos, JS Tags)</span></p>
+        
+        <div class="files-bar">
+          <div class="file-section">
+            <div class="file">
+              <span class="file-base">
+                <img src="assets/file.svg">
+              </span>
+              <p>Hikoot_Clien_Pitch_V2.pdf</p>
+            </div>
+            <div class="file-edit">
+              <p>+ Add Note</p>
+              <p>Edit</p>
+              <p>Remove</p>
+            </div>
+          </div>
+          <div class="add-file">
+            <p>+ Add Files</p>
+          </div>
+        </div>
+        
+        <div class="file-drop">
+          <input id="creatives" name="creatives" type="file">
+          <label for="creatives"><img src="assets/cloud-upload.svg"> &nbsp; &nbsp; You can also drop your files here</label>
+        </div>
+      </div>
+
+      <div class="sub-menu-col col-one margin-top">
+        <p>Creative Assets
+          <span class="tagline">(If we need to create any creatives for you, 
+            kindly upload assets we will need)</span>
+        </p>
+      
+        <div class="files-bar">
+          <div class="file-section">
+            <div class="file">
+              <span class="file-base">
+                <img src="assets/file.svg">
+              </span>
+              <p>Hikoot_Clien_Pitch_V2.pdf</p>
+            </div>
+            <div class="file-edit">
+              <p>+ Add Note</p>
+              <p>Edit</p>
+              <p>Remove</p>
+            </div>
+          </div>
+          <div class="add-file">
+            <p>+ Add Files</p>
+          </div>
+        </div>
+      
+        <div class="file-drop">
+          <input id="creatives" name="creatives" type="file">
+          <label for="creatives">
+            <img src="assets/cloud-upload.svg"> &nbsp; &nbsp; You can also drop your files here</label>
+        </div>
+      </div>
+
+      <div class="sub-menu-col col-one margin-top">
+        <p>Flash SMS Content</p>
+
+        <div class="flash-sms">
+          <div class="flash-content">
+            <p>1. Campaing is For Real in the market ………</p>
+          </div>
+          <div class="flash-controls">
             <p>Edit</p>
             <p>Remove</p>
           </div>
         </div>
-        <div class="add-file">
-          <p>+ Add Files</p>
+      
+        <div class="flash-textarea">
+          <textarea name="flash-sms" placeholder="Type here maximum of 160 characters"></textarea>
         </div>
       </div>
-    
-      <div class="file-drop">
-        <input id="creatives" name="creatives" type="file">
-        <label for="creatives">
-          <img src="assets/cloud-upload.svg"> &nbsp; &nbsp; You can also drop your files here</label>
-      </div>
+
+      <div class="flash-submit margin-top"><button class="right">SUBMIT</button></div>
+
     </div>
 
-    <div class="sub-menu-col col-one margin-top">
-      <p>Flash SMS Content</p>
-
-      <div class="flash-sms">
-        <div class="flash-content">
-           <p>1. Campaing is For Real in the market ………</p>
-        </div>
-        <div class="flash-controls">
-          <p>Edit</p>
-          <p>Remove</p>
-        </div>
-      </div>
-    
-      <div class="flash-textarea">
-        <textarea name="flash-sms" placeholder="Type here maximum of 160 characters"></textarea>
-      </div>
-    </div>
-
-    <div class="flash-submit margin-top"><button class="right">SUBMIT</button></div>
-
+    <button (click)="showBlock2()">PREV</button> <button (click)="showBlock4()">NEXT</button>
   </div>
 
-  <button>NEXT</button>
+  <div *ngIf="block4">
+    <div class="sub-menu">
+      <p class="sub-menu-header">This is the Submission Tab</p>  
+    </div>
+  
+    <button (click)="showBlock3()">PREV</button>
+  </div>
 </form>
 
 </div>

@@ -1,6 +1,9 @@
+import { HttpClientModule } from '@angular/common/http';
+import { ApiService } from './api.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app.routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -11,6 +14,9 @@ import { SearchComponent } from './components/search/search.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { ApplyComponent } from './components/apply/apply.component';
 import { CampaignComponent } from './components/campaign/campaign.component';
+import { ManageComponent } from './components/manage/manage.component';
+import { HeaderWhiteComponent } from './components/header-white/header-white.component';
+import { ProductComponent } from './components/product/product.component';
 
 
 @NgModule({
@@ -23,12 +29,18 @@ import { CampaignComponent } from './components/campaign/campaign.component';
     AuthComponent,
     ApplyComponent,
     CampaignComponent,
+    ManageComponent,
+    HeaderWhiteComponent,
+    ProductComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

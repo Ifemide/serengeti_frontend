@@ -1,4 +1,9 @@
 <div class="slide">
+
+  <div class="header">
+    <app-header-white></app-header-white>
+  </div>
+  
   <img class="slide-img" src="assets/background.png">
   <div class="jumbo-pack">
     <div class="jumbo-pack-content">
@@ -8,25 +13,36 @@
       <p class="whitish">Reach your exact target audience and drive sales with premium
         <br>performance display ads, powered by precise data</p>
 
-      <form class="" action="search.html" method="GET">
-        <select class="location" name="location">
+      <form class="form-group" [formGroup]="myform" (ngSubmit)="queryDB(myform)">
+        <select class="location form-control" name="area" formControlName="area">
           <option value="">Choose location for your advert</option>
-          <option value="IK">Ikeja</option>
-          <option value="YB">Yaba</option>
           <option value="VI">Victoria Island</option>
+          <option value="YB">Yaba</option>
           <option value="LK">Lekki</option>
+          <option value="IK">Ikeja</option>
+          <!-- <option *ngFor="let loca of areas" [value]="loca">{{loca}}</option> -->
         </select>
-        <select class="ad-type" name="ad-type">
-          <option value="bboard">Board</option>
-          <option value="proad">PRO Ad</option>
+        <select class="adtype form-control" name="adtype" formControlName="adtype">
+          <option value="">Choose Category</option>
+          <option value="1">Board</option>
+          <option value="2">PRO-ads</option>
+          <!-- <option *ngFor="let ad of adtypes" [value]="ad">{{ ad }}</option> -->
         </select>
         <button type="submit" class="submit">GO!</button>
+        <!--   
+          (click)="filterAssets()" routerLink="/search"
+           (onSubmit)="goToSearch()" [formGroup]="myform"
+           formControlName="adtype" formControlName="location"
+          <pre [style.color]="white">{{myform.value | json}}</pre>
+            routerLink="/manage"
+           {{myform | json}}
+        -->
       </form>
-      <a href="#">Talk to a Media Planner</a>
+      <a>Talk to a Media Planner</a>
     </div>
   </div>
 </div>
-
+<!-- <p>Form value {{ JSON.stringify(myform.value) | json }} </p> -->
 <div class="works-section" class="section-head">
   <div class="top-bar">
     <div class="top-bar-content">

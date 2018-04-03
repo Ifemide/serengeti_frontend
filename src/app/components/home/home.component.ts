@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  myform: FormGroup;
+  area: any;
+  adtype: any;
 
-  ngOnInit() {
+
+  constructor(private _formBuilder: FormBuilder) {
+    this.myform = this._formBuilder.group({
+      'area': '',
+      'adtype': ''
+    });
+  }
+
+  ngOnInit() {}
+
+  queryDB(val) {
+    this.myform = val;
+    location.href = location.href + 'search?_location=' + this.myform.value.area + '&category_id=' + this.myform.value.adtype;
   }
 
 }

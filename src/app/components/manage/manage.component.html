@@ -1,0 +1,96 @@
+
+
+<div class="container">
+
+  <img class="manage-bg" src="assets/landing.png" alt="">
+
+  <div class="header">
+    <div class="nav">
+      <div class="logo-group" routerLink="/">
+        <img src="assets/shape.png">
+        <img src="assets/pride-land.png">
+      </div>
+      <ul class="menu" [ngStyle]="{'margin-right':mediaBuyerForm === true ? '25em' : '0em' }">
+        <li>
+          <a routerLink="/">Home</a>
+        </li>
+        <li>
+          <a href="/product">Product</a>
+        </li>
+        <li>
+          <a routerLink="/search">Search</a>
+        </li>
+        <li>
+          <a routerLink="/manage">Manage</a>
+        </li>
+        <li class="menu-button button button-white">
+          <a routerLink="/campaign">Sell a Board</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="all">
+  <div class="manage-content" [ngStyle]="{'right':mediaBuyerForm === true ? '25em' : '0em' }">
+    <h1>
+       Let’s Manage Your<br> Next Outdoor<br> Campaign
+    </h1>
+  </div>
+
+  <div class="manage-tagline" [ngStyle]="{'right':mediaBuyerForm === true ? '25em' : '0em' }">
+    <p>
+       Start your next outdoor campaign with Prideland. 
+       We provide campaigns on board adverts and programaatic 
+       adverts to specific audiences. Just tell us your budget, 
+       your preferred location or board and we will provide the 
+       best solution for you.
+    </p>
+  </div>
+
+  <div class="manage-buttons" [ngStyle]="{'right':mediaBuyerForm === true ? '25em' : '0em' }">
+    <p>Pick a Board</p>
+    <p>Start a PRO-ad</p>
+    <p (click)="showMediaBuyerForm()">Talk to a Media Buyer</p>
+  </div>
+  </div>
+
+  <form class="media-buyer-form" [ngStyle]="{'right':mediaBuyerForm === true ? '0em' : '-25em' }">
+
+    <div class="form-all">
+      <div>
+        <p>Type of Campaign</p>
+        <div class="select">
+          <select name="campaign-type">
+            <option value="board">Board</option>
+            <option value="PRO-ad">PRO-ad</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <p>Contact Person Phone Number</p>
+        <input type="text" placeholder="type here..">
+      </div>
+
+      <div>
+        <p>Contact Person Email</p>
+        <input type="email" placeholder="type here..">
+      </div>
+
+      <div>
+        <p>Campaign Budget</p>
+        <input type="number" placeholder="type here..">
+      </div>
+
+      <div>
+        <p>Campaign Duration</p>
+        <input type="text" placeholder="type here..">
+      </div>
+
+      <button type="submit">Submit</button>
+    </div>
+
+  </form>
+
+
+</div>

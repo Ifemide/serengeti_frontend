@@ -1,4 +1,5 @@
-import { AuthComponent } from './components/auth/auth.component';
+import { ManageComponent } from './components/manage/manage.component';
+import { ProductComponent } from './components/product/product.component';
 import { SearchComponent } from './components/search/search.component';
 import { CampaignComponent } from './components/campaign/campaign.component';
 import { HomeComponent } from './components/home/home.component';
@@ -20,8 +21,16 @@ const routes: Routes = [
         component: SearchComponent
     },
     {
-        path: 'auth',
-        component: AuthComponent
+        path: 'search/:query',
+        component: SearchComponent
+    },
+    {
+        path: 'manage',
+        component: ManageComponent
+    },
+    {
+        path: 'product',
+        component: ProductComponent
     }
 ];
 

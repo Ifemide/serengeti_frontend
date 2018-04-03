@@ -1,4 +1,4 @@
-.nav, .logo-group, .menu {
+.nav, .menu {
 	display: flex;
 	align-items: center;
 }
@@ -8,12 +8,8 @@
 	padding: 1.5em 4em;
 }
 
-.logo-group {
+.logo {
 	cursor: pointer;
-}
-
-.logo-group img {
-    margin-right: .5em;
 }
 
 .menu {
@@ -26,7 +22,7 @@
 
 .menu li a {
 	text-decoration: none;
-	color: #1d1c21;
+	color: #ffffff;
 }
 
 .menu ul li.sell-board:hover {
