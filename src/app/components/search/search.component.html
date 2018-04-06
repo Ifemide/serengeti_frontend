@@ -21,65 +21,65 @@
 <!-- <p>Value: {{ filterform.value | json }}</p> -->
 <div class="search-content">
   <div class="filter">
-    <form [formGroup]="filterform" (onSubmit)="doFilter(filterform)">
-      <div class="board-cats" formGroupName="category">
-        <input id="static" type="checkbox" formControlName="static">
+    <form>
+      <div class="board-cats">
+        <input id="static" type="checkbox">
         <label for="static">Static</label>
-        <input id="dynamic" type="checkbox" formControlName="notstatic">
+        <input id="dynamic" type="checkbox">
         <label for="dynamic">Dynamic</label>
       </div>
       <div class="size-filter">
-        <div class="size-filter-top" [ngClass]="{'dark top': showSizes }" (click)="showSizeOptions()">
+        <div class="size-filter-top" [ngClass]="{'dark top': sizes }" (click)="showSizeOptions()">
           <p>All Sizes</p>
           <img src="assets/ic-play-arrow-24-px.svg">
         </div>
-        <div class="size-filter-options" *ngIf="showSizes" formGroupName="size">
-          <input id="big-size" type="checkbox" formControlName="big" value="big-size">
+        <div class="size-filter-options">
+          <input id="big-size" type="checkbox" value="big-size">
           <label for="big-size">2000 x 400</label>
-          <input id="small-size" type="checkbox" formControlName="small" value="small-size">
+          <input id="small-size" type="checkbox" value="small-size">
           <label for="small-size">1500 x 300</label>
-          <input id="medium-size" type="checkbox" formControlName="medium" value="medium-size">
+          <input id="medium-size" type="checkbox" value="medium-size">
           <label for="medium-size">1800 x 350</label>
         </div>
       </div>
 
       <div class="type-filter">
-        <div class="type-filter-top" [ngClass]="{'dark top': showTypes }" (click)="showTypeOptions()">
+        <div class="type-filter-top" [ngClass]="{'dark top': types }" (click)="showTypeOptions()">
           <p>All Types</p>
           <img src="assets/ic-play-arrow-24-px.svg">
         </div>
-        <div class="type-filter-options" *ngIf="showTypes" formGroupName="type">
-          <input id="flag-pole" type="checkbox" formControlName="flagpole" value="flag-pole">
+        <div class="type-filter-options">
+          <input id="flag-pole" type="checkbox" value="flag-pole">
           <label for="flag-pole">Flag Poles</label>
-          <input id="mobile-screen" type="checkbox" formControlName="mobilescreen" value="mobile-screen">
+          <input id="mobile-screen" type="checkbox" value="mobile-screen">
           <label for="mobile-screen">Mobile Screens</label>
-          <input id="wall-drape" type="checkbox" formControlName="walldrape" value="wall-drape">
+          <input id="wall-drape" type="checkbox" value="wall-drape">
           <label for="wall-drape">Wall Drapes</label>
-          <input id="gantry" type="checkbox" formControlName="gantry" value="gantry">
+          <input id="gantry" type="checkbox" value="gantry">
           <label for="gantry">Gantries</label>
-          <input id="led-cube" type="checkbox" formControlName="ledcube" value="led-cube">
+          <input id="led-cube" type="checkbox" value="led-cube">
           <label for="led-cube">LED Cubes</label>
-          <input id="other" type="checkbox" formControlName="other" value="other">
+          <input id="other" type="checkbox" value="other">
           <label for="other">Others</label>
         </div>
       </div>
 
       <div class="price-filter">
-        <div class="price-filter-top" [ngClass]="{'dark top': showPrices }" (click)="showPriceOptions()">
+        <div class="price-filter-top" [ngClass]="{'dark top': prices }" (click)="showPriceOptions()">
           <p>Price Range</p>
           <img src="assets/ic-play-arrow-24-px.svg">
         </div>
-        <div class="price-range-dialogs" *ngIf="showPrices"> 
+        <div class="price-range-dialogs">
           <div class="range-thumb-track">
             <label>Range</label>
             <input type="range" name="">
           </div>
-          <div class="range-numbers" formGroupName="price">
+          <div class="range-numbers">
             <label>From</label>
             <span>
-              <input type="number" formControlName="start">
+              <input type="number">
               <label>To</label>
-              <input type="number" formControlName="end">
+              <input type="number">
             </span>
           </div>
         </div>

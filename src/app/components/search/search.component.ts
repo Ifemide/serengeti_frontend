@@ -20,9 +20,9 @@ export class SearchComponent implements OnInit {
   mainform: FormGroup;
   filterform: FormGroup;
 
-  showSizes: boolean;
-  showTypes: boolean;
-  showPrices: boolean;
+  sizes = false;
+  types = false;
+  prices = false;
 
   constructor(private _fb: FormBuilder, private _api: ApiService, private _http: HttpClient) {
 
@@ -32,31 +32,28 @@ export class SearchComponent implements OnInit {
       console.log(this.assets);
     });
 
-    // this._api.getBoardTypes();
-
-    this.showSizes = false; this.showTypes = false; this.showPrices = false;
    }
 
   goSearch(val) {
-    if (this.mainform.valid) {
-      console.log('Form Submitted!');
-    } else { console.log(20); }
+    // if (this.mainform.valid) {
+    //   console.log('Form Submitted!');
+    // } else { console.log(20); }
   }
 
   doFilter(val) {
-    console.log(val);
+    // console.log(val);
   }
 
   showSizeOptions() {
-    this.showSizes = !this.showSizes;
+    this.sizes = !this.sizes;
   }
 
   showTypeOptions() {
-    this.showTypes = !this.showTypes;
+    this.types = !this.types;
   }
 
   showPriceOptions() {
-    this.showPrices = !this.showPrices;
+    this.prices = !this.prices;
   }
 
   ngOnInit() {
@@ -65,15 +62,15 @@ export class SearchComponent implements OnInit {
       adcate: ''
     });
 
-    this.filterform = this._fb.group({
-      category: this._fb.group({ static: this._fb.array([true, false, true]), notstatic: this._fb.array([true, false, true]) }),
-      size: this._fb.group({ big: this._fb.array([true, false, true]), small: this._fb.array([true, false, true]),
-          medium: this._fb.array([true, false, true]) }),
-      type: this._fb.group({ flagpole: this._fb.array([true, false, true]), mobilescreen: this._fb.array([true, false, true]),
-          walldrape: this._fb.array([true, false, true]), gantry: this._fb.array([true, false, true]),
-          ledcube: this._fb.array([true, false, true]), other: this._fb.array([true, false, true]) }),
-      price: '100000', end: '500000000'
-    });
+    // this.filterform = this._fb.group({
+    //   category: this._fb.group({ static: this._fb.array([true, false, true]), notstatic: this._fb.array([true, false, true]) }),
+    //   size: this._fb.group({ big: this._fb.array([true, false, true]), small: this._fb.array([true, false, true]),
+    //       medium: this._fb.array([true, false, true]) }),
+    //   type: this._fb.group({ flagpole: this._fb.array([true, false, true]), mobilescreen: this._fb.array([true, false, true]),
+    //       walldrape: this._fb.array([true, false, true]), gantry: this._fb.array([true, false, true]),
+    //       ledcube: this._fb.array([true, false, true]), other: this._fb.array([true, false, true]) }),
+    //   price: '100000', end: '500000000'
+    // });
   }
 
 }

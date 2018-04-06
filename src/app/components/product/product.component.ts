@@ -13,19 +13,22 @@ export class ProductComponent implements OnInit {
   id: any;
   asset: {};
 
-  constructor(private _route: ActivatedRoute, private _api: ApiService) { }
-
-  ngOnInit() {
-    window.scrollTo(0, 0);
+  constructor(private _route: ActivatedRoute, private _api: ApiService) {
 
     this._route.paramMap.subscribe(params => {
       this.id = params.get('id');
     });
 
-    this._api.getSingleAsset(this.id).subscribe(data => {
-      this.asset = data;
-      this.asset = this.asset.data;
+    this.asset = this._api.getSingleAsset(this.id)
+      .subscribe(result => {
+      this.asset = result;
+      // this.asset = this.asset.data;
     });
+
+  }
+
+  ngOnInit() {
+    window.scrollTo(0, 0);
   }
 
 
