@@ -10,34 +10,34 @@
         <img src="assets/shape.png">
         <img src="assets/pride-land.png">
       </div>
-      <ul class="menu" [ngStyle]="{'margin-right':mediaBuyerForm === true ? '25em' : '0em' }">
-        <li>
-          <a routerLink="/">Home</a>
-        </li>
-        <li>
-          <a href="/product">Product</a>
-        </li>
-        <li>
-          <a routerLink="/search">Search</a>
-        </li>
-        <li>
-          <a routerLink="/manage">Manage</a>
-        </li>
+      <ul class="menu" [ngStyle]="{'margin-right':mediaBuyerForm === true ? '30em' : '0em' }">
+          <li>
+            <a routerLink="/">Home</a>
+          </li>
+          <li>
+            <a href="/services">Services</a>
+          </li>
+          <li>
+            <a routerLink="/boards">Boards</a>
+          </li>
+          <li>
+            <a routerLink="/aboutus">About Us</a>
+          </li>
         <li class="menu-button button button-white">
-          <a routerLink="/campaign">Sell a Board</a>
+          <a routerLink="/">Sell a Board</a>
         </li>
       </ul>
     </div>
   </div>
 
   <div class="all">
-  <div class="manage-content" [ngStyle]="{'right':mediaBuyerForm === true ? '25em' : '0em' }">
+  <div class="manage-content" [ngStyle]="{'right':mediaBuyerForm === true ? '30em' : '0em' }">
     <h1>
        Let’s Manage Your<br> Next Outdoor<br> Campaign
     </h1>
   </div>
 
-  <div class="manage-tagline" [ngStyle]="{'right':mediaBuyerForm === true ? '25em' : '0em' }">
+  <div class="manage-tagline" [ngStyle]="{'right':mediaBuyerForm === true ? '30em' : '0em' }">
     <p>
        Start your next outdoor campaign with Prideland. 
        We provide campaigns on board adverts and programaatic 
@@ -47,17 +47,20 @@
     </p>
   </div>
 
-  <div class="manage-buttons" [ngStyle]="{'right':mediaBuyerForm === true ? '25em' : '0em' }">
-    <p>Pick a Board</p>
-    <p>Start a PRO-ad</p>
-    <p (click)="showMediaBuyerForm()">Talk to a Media Buyer</p>
+  <div class="manage-buttons" [ngStyle]="{'right':mediaBuyerForm === true ? '30em' : '0em' }">
+    <p routerLink="/search">Pick a Board</p>
+    <p routerLink="/campaign">Start a PRO-ad</p>
+    <p (click)="showMediaBuyerForm()">Talk to a Media Planner</p>
   </div>
   </div>
 
-  <form class="media-buyer-form" [ngStyle]="{'right':mediaBuyerForm === true ? '0em' : '-25em' }">
+  <form class="media-buyer-form" [ngStyle]="{'right':mediaBuyerForm === true ? '0em' : '-30em' }">
+       <!--  [ngStyle]="{'display':mediaBuyerForm === true ? 'block' : 'none' }"
+         -->
 
     <div class="form-all">
-      <div>
+
+      <div [ngStyle]="{'display':drawer === true ? 'block' : 'none' }">
         <p>Type of Campaign</p>
         <div class="select">
           <select name="campaign-type">
@@ -65,6 +68,19 @@
             <option value="PRO-ad">PRO-ad</option>
           </select>
         </div>
+      </div>
+
+      <div class="selected" *ngIf="asset.id > 0">
+        <p>Board Campaign</p>
+        <p class="title">{{ asset.attributes.title }}</p>
+        <div>
+          <p>{{ asset.attributes.asset_type_group.title }}</p>
+          <p class="divider"></p>
+          <p>{{ asset.attributes.category.title }}</p>
+          <p class="divider"></p>
+          <p>{{ asset.attributes.location }}</p>
+        </div>
+        <p class="change" routerLink="/search">change</p>
       </div>
 
       <div>
@@ -87,10 +103,24 @@
         <input type="text" placeholder="type here..">
       </div>
 
-      <button type="submit">Submit</button>
+      <button type="submit" routerLink="/">Submit</button>
     </div>
 
   </form>
+
+  <div class="overlay">
+      <div>
+        <span class="close">&times;</span>
+        <div class="overlay-content">
+          <diV>
+            <img src="assets/shape.png">
+            <img src="assets/pride-land.png">
+          </diV>
+          <h1>Thank you for Using Pride Land!!</h1>
+          <p>A Media Buyer will communicate with you via email or a phone call within 24 hours.</p>
+        </div>
+      </div>
+  </div>
 
 
 </div>

@@ -17,6 +17,9 @@ import { CampaignComponent } from './components/campaign/campaign.component';
 import { ManageComponent } from './components/manage/manage.component';
 import { HeaderWhiteComponent } from './components/header-white/header-white.component';
 import { ProductComponent } from './components/product/product.component';
+import { ServicesComponent } from './components/services/services.component';
+import { BoardsComponent } from './components/boards/boards.component';
+import { AboutusComponent } from './components/aboutus/aboutus.component';
 
 
 @NgModule({
@@ -32,6 +35,9 @@ import { ProductComponent } from './components/product/product.component';
     ManageComponent,
     HeaderWhiteComponent,
     ProductComponent,
+    ServicesComponent,
+    BoardsComponent,
+    AboutusComponent,
   ],
   imports: [
     BrowserModule,

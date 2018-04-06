@@ -1,5 +1,5 @@
 import { ApiService } from './../../api.service';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
@@ -15,29 +15,36 @@ import 'rxjs/add/operator/catch';
 })
 export class SearchComponent implements OnInit {
 
-  page: any; result: any; userId: any; params: any; query: any; mainForm: any; assets: any ;
+  assets: any = {};
+  product: any;
+  mainform: FormGroup;
+  filterform: FormGroup;
 
-  public showSizes = false; public showTypes = false; public showPrices = false;
+  showSizes: boolean;
+  showTypes: boolean;
+  showPrices: boolean;
 
-  constructor(private _formBuilder: FormBuilder, private _api: ApiService, private _http: HttpClient) {
-    this._api.getAssets(location.href);
-    // this.getJSON().subscribe(data => {
-    this._http.get('assets/assets.json').subscribe(data => {
-     this.assets = data;
+  constructor(private _fb: FormBuilder, private _api: ApiService, private _http: HttpClient) {
+
+    this.assets = this._api.getData().subscribe(result => {
+      this.assets = result;
+      this.assets = this.assets.data;
+      console.log(this.assets);
     });
 
-    // console.log(this.assets);
+    // this._api.getBoardTypes();
 
-      this.mainForm = this._formBuilder.group({
-        'area': '',
-        'adtype': ''
-      });
+    this.showSizes = false; this.showTypes = false; this.showPrices = false;
    }
 
-
   goSearch(val) {
-    this.mainForm = val;
-    console.log(this.mainForm.value);
+    if (this.mainform.valid) {
+      console.log('Form Submitted!');
+    } else { console.log(20); }
+  }
+
+  doFilter(val) {
+    console.log(val);
   }
 
   showSizeOptions() {
@@ -53,11 +60,20 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.mainform = this._fb.group({
+      adlocation: '',
+      adcate: ''
+    });
 
+    this.filterform = this._fb.group({
+      category: this._fb.group({ static: this._fb.array([true, false, true]), notstatic: this._fb.array([true, false, true]) }),
+      size: this._fb.group({ big: this._fb.array([true, false, true]), small: this._fb.array([true, false, true]),
+          medium: this._fb.array([true, false, true]) }),
+      type: this._fb.group({ flagpole: this._fb.array([true, false, true]), mobilescreen: this._fb.array([true, false, true]),
+          walldrape: this._fb.array([true, false, true]), gantry: this._fb.array([true, false, true]),
+          ledcube: this._fb.array([true, false, true]), other: this._fb.array([true, false, true]) }),
+      price: '100000', end: '500000000'
+    });
   }
-
-  // public getJSON(): Observable<any> {
-  //   return this._http.get('assets/assets.json').map((res: any) => res.json());
-  // }
 
 }

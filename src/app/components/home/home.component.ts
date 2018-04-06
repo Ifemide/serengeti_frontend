@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -13,8 +13,8 @@ export class HomeComponent implements OnInit {
   adtype: any;
 
 
-  constructor(private _formBuilder: FormBuilder) {
-    this.myform = this._formBuilder.group({
+  constructor(private _fb: FormBuilder) {
+    this.myform = this._fb.group({
       'area': '',
       'adtype': ''
     });

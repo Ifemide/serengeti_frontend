@@ -13,8 +13,8 @@
       <p class="whitish">Reach your exact target audience and drive sales with premium
         <br>performance display ads, powered by precise data</p>
 
-      <form class="form-group" [formGroup]="myform" (ngSubmit)="queryDB(myform)">
-        <select class="location form-control" name="area" formControlName="area">
+      <form [formGroup]="myform" (ngSubmit)="queryDB(myform)">
+        <select class="location" name="area" formControlName="area">
           <option value="">Choose location for your advert</option>
           <option value="VI">Victoria Island</option>
           <option value="YB">Yaba</option>
@@ -22,7 +22,7 @@
           <option value="IK">Ikeja</option>
           <!-- <option *ngFor="let loca of areas" [value]="loca">{{loca}}</option> -->
         </select>
-        <select class="adtype form-control" name="adtype" formControlName="adtype">
+        <select class="adtype" name="adtype" formControlName="adtype">
           <option value="">Choose Category</option>
           <option value="1">Board</option>
           <option value="2">PRO-ads</option>

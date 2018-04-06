@@ -1,3 +1,6 @@
+import { BoardsComponent } from './components/boards/boards.component';
+import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { ServicesComponent } from './components/services/services.component';
 import { ManageComponent } from './components/manage/manage.component';
 import { ProductComponent } from './components/product/product.component';
 import { SearchComponent } from './components/search/search.component';
@@ -29,8 +32,24 @@ const routes: Routes = [
         component: ManageComponent
     },
     {
-        path: 'product',
+        path: 'asset/:id',
         component: ProductComponent
+    },
+    {
+        path: 'manage/:id',
+        component: ManageComponent
+    },
+    {
+        path: 'services',
+        component: ServicesComponent
+    },
+    {
+        path: 'boards',
+        component: BoardsComponent
+    },
+    {
+        path: 'aboutus',
+        component: AboutusComponent
     }
 ];
 
@@ -40,4 +59,5 @@ const routes: Routes = [
     providers: []
 })
 
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

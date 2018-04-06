@@ -6,73 +6,74 @@
   <div class="product-wrapper">
     <div class="product-wrapper-top">
       <div class="product-img">
-        <img class="main-img-lg" src="assets/background.png">
-        <img class="certified-lg show" src="assets/award.png">
+        <img class="main-img-lg" src="{{ asset.attributes.asset_image_3 }}">
+        <!-- <img class="certified-lg show" src="assets/award.png"> 
+          src="assets/background.png" -->
       </div>
       <div class="product-details">
-        <h2>Rilwan Billboard</h2>
+        <h2>{{ asset.attributes.title }}</h2>
         <div class="type-location">
-          <p>Digital</p>
+          <p>{{ asset.attributes.asset_type_group.title }}</p>
           <p class="divider-lg">|</p>
-          <p>Board</p>
+          <p>{{ asset.attributes.category.title }}</p>
           <p class="divider-lg">|</p>
-          <p>Victoria Island, Lagos, Nigeria</p>
+          <p>{{ asset.attributes.location }}</p>
         </div>
         <div class="main-desc">
           <p class="bold">Description</p>
-          <p class="normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua.</p>
+          <p class="normal">{{ asset.attributes.description }}</p>
         </div>
         <div class="size-price">
           <div>
             <p class="bold">Size</p>
-            <p class="normal">2049m x 1987m x 9000m</p>
+            <!-- {{ asset.attributes. }} -->
+            <p class="normal">{{ asset.attributes.asset_specification }}</p>
           </div>
           <p class="line-divider"></p>
           <div>
             <p class="bold">Bidding Price</p>
-            <p class="normal">From N350,000,000</p>
+            <p class="normal">{{ asset.attributes.minimum_price }}</p>
           </div>
         </div>
         <div class="crowd-eyes">
           <div>
             <p class="bold">Crowd Analytics</p>
-            <p class="normal">750,000 per hour</p>
+            <p class="normal">{{ asset.attributes.crowd_analytics }} per hour</p>
           </div>
           <p class="line-divider"></p>
           <div>
             <p class="bold">Eyeballs per Day</p>
-            <p class="normal">NIL</p>
+            <p class="normal">{{ asset.attributes.eyeballs_per_day }}</p>
           </div>
         </div>
         <div class="audience-time">
           <div>
             <p class="bold">Proposed Audience Pack</p>
-            <p class="normal">NIL</p>
+            <p class="normal">{{ asset.attributes.proposed_audience_pack }}</p>
           </div>
           <p class="line-divider"></p>
           <div>
             <p class="bold">Audience Dwell Time</p>
-            <p class="normal">5 mins per Individual</p>
+            <p class="normal">RAW - 5 mins per Individual</p>
           </div>
         </div>
         <div class="map-crowd">
           <div>
             <p class="bold">Map Coordinates</p>
-            <p class="normal">2049m x 1987m x 9000m</p>
+            <p class="normal">{{ asset.attributes.latlng }}</p>
           </div>
           <p class="line-divider"></p>
           <div>
             <p class="bold">Crowd Analysis</p>
-            <p class="normal">Plenty people dey sha</p>
+            <p class="normal">RAW - Plenty people dey sha</p>
           </div>
         </div>
       </div>
     </div>
     <div class="product-wrapper-bottom">
       <div>
-        <p class="normal bid-button">Starting From
-          <span>N5,000,000</span>
+        <p class="normal bid-button" [routerLink]="['/manage', asset.id]">
+          Starting From &nbsp; <span> {{ asset.attributes.minimum_price | currency: 'NGN' }}</span>
         </p>
         <!-- <p>♥</p> -->
       </div>

@@ -152,6 +152,14 @@
     align-items: center;	
 	border-radius: 3px;
 	margin-right: 1em;
+	cursor: pointer;
+}
+
+.product-wrapper .product-wrapper-bottom 
+.bid-button:hover {
+	background: none;
+	color: #1d1c21;
+	border: 1px solid #1d1c21;
 }
 
 .add-on .add-on-list img {
