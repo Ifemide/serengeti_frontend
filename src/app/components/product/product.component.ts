@@ -22,6 +22,7 @@ export class ProductComponent implements OnInit {
     this.asset = this._api.getSingleAsset(this.id)
       .subscribe(result => {
       this.asset = result;
+      console.log(this.asset);
       // this.asset = this.asset.data;
     });
 
