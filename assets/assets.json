@@ -1,0 +1,185 @@
+{
+    "data": [
+        {
+            "id": "5",
+            "type": "assets",
+            "attributes": {
+                "title": "Redit Board",
+                "description": "Redit board ajah",
+                "images": null,
+                "location": "Ajah",
+                "category": {
+                    "id": 1,
+                    "title": "Boards",
+                    "description": "Category for assets that belongs to boards"
+                },
+                "type": {
+                    "id": 3,
+                    "title": "Unipoles",
+                    "description": "Unipoles"
+                },
+                "crowd_analytics": "100 people",
+                "eyeballs_per_day": "43",
+                "proposed_audience_pack": "100 people",
+                "asset_specification": "800x299",
+                "click_count": null,
+                "minimum_price": 120000,
+                "from_price": null,
+                "end_price": null,
+                "order_count": 0,
+                "latlng": "POINT (19.22983 18.11982)",
+                "asset_type_group": {
+                    "id": 1,
+                    "title": "Static",
+                    "description": "Static boards grouping"
+                }
+            }
+        },
+        {
+            "id": "4",
+            "type": "assets",
+            "attributes": {
+                "title": "Soft Network Board",
+                "description": "Board at Yaba",
+                "images": null,
+                "location": "Lagos, Nigeria",
+                "category": {
+                    "id": 1,
+                    "title": "Boards",
+                    "description": "Category for assets that belongs to boards"
+                },
+                "type": {
+                    "id": 4,
+                    "title": "Walldrape",
+                    "description": "Walldrape"
+                },
+                "crowd_analytics": "100 people",
+                "eyeballs_per_day": "50",
+                "proposed_audience_pack": "500 people",
+                "asset_specification": "1198x11982",
+                "click_count": null,
+                "minimum_price": 20000,
+                "from_price": null,
+                "end_price": null,
+                "order_count": 0,
+                "latlng": "POINT (89.28839 11.22903)",
+                "asset_type_group": {
+                    "id": 1,
+                    "title": "Static",
+                    "description": "Static boards grouping"
+                }
+            }
+        },
+        {
+            "id": "3",
+            "type": "assets",
+            "attributes": {
+                "title": "Ojukwu Board",
+                "description": "Board at ebute meta",
+                "images": null,
+                "location": "Ebute-Metta, Lagos",
+                "category": {
+                    "id": 1,
+                    "title": "Boards",
+                    "description": "Category for assets that belongs to boards"
+                },
+                "type": {
+                    "id": 3,
+                    "title": "Unipoles",
+                    "description": "Unipoles"
+                },
+                "crowd_analytics": "90 people",
+                "eyeballs_per_day": "90",
+                "proposed_audience_pack": "1000 people",
+                "asset_specification": "1898x2299",
+                "click_count": null,
+                "minimum_price": 300000,
+                "from_price": null,
+                "end_price": null,
+                "order_count": 0,
+                "latlng": "POINT (12.29933 11.2993)",
+                "asset_type_group": {
+                    "id": 1,
+                    "title": "Static",
+                    "description": "Static boards grouping"
+                }
+            }
+        },
+        {
+            "id": "2",
+            "type": "assets",
+            "attributes": {
+                "title": "Billboard at Makoko",
+                "description": "Anything goes here",
+                "images": null,
+                "location": "Makoko, Lagos",
+                "category": {
+                    "id": 1,
+                    "title": "Boards",
+                    "description": "Category for assets that belongs to boards"
+                },
+                "type": {
+                    "id": 3,
+                    "title": "Unipoles",
+                    "description": "Unipoles"
+                },
+                "crowd_analytics": "100 per day",
+                "eyeballs_per_day": "90",
+                "proposed_audience_pack": "500 people",
+                "asset_specification": "2087x1928",
+                "click_count": 2,
+                "minimum_price": 400000,
+                "from_price": null,
+                "end_price": null,
+                "order_count": 0,
+                "latlng": "POINT (13.338928 19.228923)",
+                "asset_type_group": {
+                    "id": 1,
+                    "title": "Static",
+                    "description": "Static boards grouping"
+                }
+            }
+        },
+        {
+            "id": "1",
+            "type": "assets",
+            "attributes": {
+                "title": "Rilwan Bilboard",
+                "description": "This board if for the rilwan's",
+                "images": null,
+                "location": "Lagos, Nigeria",
+                "category": {
+                    "id": 1,
+                    "title": "Boards",
+                    "description": "Category for assets that belongs to boards"
+                },
+                "type": {
+                    "id": 3,
+                    "title": "Unipoles",
+                    "description": "Unipoles"
+                },
+                "crowd_analytics": "A lot of people",
+                "eyeballs_per_day": "20",
+                "proposed_audience_pack": "100 people",
+                "asset_specification": "2099x2200",
+                "click_count": 8,
+                "minimum_price": 250000,
+                "from_price": null,
+                "end_price": null,
+                "order_count": 0,
+                "latlng": "POINT (29.822998 12.288392)",
+                "asset_type_group": {
+                    "id": 1,
+                    "title": "Static",
+                    "description": "Static boards grouping"
+                }
+            }
+        }
+    ],
+    "links": {},
+    "meta": {
+        "total_pages": 1,
+        "total_count": 5,
+        "page": 0
+    }
+}

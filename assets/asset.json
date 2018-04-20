@@ -1,0 +1,36 @@
+{
+    "id": "5",
+    "type": "assets",
+    "attributes": {
+        "asset_image_1": "",
+        "title": "Redit Board",
+        "description": "Redit board ajah",
+        "images": null,
+        "location": "Ajah",
+        "category": {
+            "id": 1,
+            "title": "Boards",
+            "description": "Category for assets that belongs to boards"
+        },
+        "type": {
+            "id": 3,
+            "title": "Unipoles",
+            "description": "Unipoles"
+        },
+        "crowd_analytics": "100 people",
+        "eyeballs_per_day": "43",
+        "proposed_audience_pack": "100 people",
+        "asset_specification": "800x299",
+        "click_count": null,
+        "minimum_price": 120000,
+        "from_price": null,
+        "end_price": null,
+        "order_count": 0,
+        "latlng": "POINT (19.22983 18.11982)",
+        "asset_type_group": {
+            "id": 1,
+            "title": "Static",
+            "description": "Static boards grouping"
+        }
+    }
+}
