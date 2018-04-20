@@ -15,8 +15,7 @@ import { Observable } from 'rxjs/Observable';
 export class ProductComponent implements OnInit {
 
   id: any;
-  asset: {};
-  usr_obj: any;
+  asset: any;
   public mediaBuyerForm = false;
   makeRequestForm: FormGroup;
   loginReq: any = true;
@@ -54,7 +53,7 @@ export class ProductComponent implements OnInit {
     this.asset = this._api.getSingleAsset(this.id)
       .subscribe( (result: any) => {
         console.log(result);
-      this.asset = result.data;
+      this.asset = result.data.attributes;
     });
 
   }
@@ -107,10 +106,10 @@ export class ProductComponent implements OnInit {
   }
 
   preloadBooking() {
-    this.usr_obj = JSON.parse(localStorage.getItem('PLU:userInfo')).data;
-    this.booking.contact_person_name = this.usr_obj.attributes.name;
-    this.booking.contact_person_phone = this.usr_obj.attributes.phonenumber;
-    this.booking.contact_person_email = this.usr_obj.attributes.email;
+    const usr_obj = JSON.parse(localStorage.getItem('PLU:userInfo')).data;
+    this.booking.contact_person_name = usr_obj.attributes.name;
+    this.booking.contact_person_phone = usr_obj.attributes.phonenumber;
+    this.booking.contact_person_email = usr_obj.attributes.email;
   }
   makeBooking() {
     this.booking.asset_id = this.id;
