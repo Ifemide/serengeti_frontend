@@ -259,7 +259,7 @@ input[type="checkbox"]:checked + label::before {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	content: url(assets/check.png);
+	/* content: url(assets/check.png); */
 	background-color: #ffbd00;
 }
 

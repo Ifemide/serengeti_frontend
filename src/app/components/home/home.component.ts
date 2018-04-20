@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
 
   queryDB(val) {
     this.myform = val;
-    location.href = location.href + 'search?_location=' + this.myform.value.area + '&category_id=' + this.myform.value.adtype;
+    location.href = location.href + 'boards?_location=' + this.myform.value.area + '&category_id=' + this.myform.value.adtype;
   }
 
 }

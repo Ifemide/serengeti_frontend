@@ -14,14 +14,16 @@
         <br>performance display ads, powered by precise data</p>
 
       <form [formGroup]="myform" (ngSubmit)="queryDB(myform)">
-        <select class="location" name="area" formControlName="area">
+          <div class="location">
+              <input name="area" formControlName="area" placeholder="Type preferred location">
+            </div>
+        <!-- <select >
           <option value="">Choose location for your advert</option>
           <option value="VI">Victoria Island</option>
           <option value="YB">Yaba</option>
           <option value="LK">Lekki</option>
           <option value="IK">Ikeja</option>
-          <!-- <option *ngFor="let loca of areas" [value]="loca">{{loca}}</option> -->
-        </select>
+        </select> -->
         <select class="adtype" name="adtype" formControlName="adtype">
           <option value="">Choose Category</option>
           <option value="1">Board</option>
@@ -236,110 +238,6 @@
   <p class="audience-channels-title">We provide access to a wide range of
     <br>audience channels</p>
   <div class="audience-channel-list">
-    <div class="list-row">
-      <div class="">
-        <i class="fas fa-search"></i>
-        <p>Automotive</p>
-      </div>
-      <div class="">
-        <i class="fas fa-search"></i>
-        <p>Beauty</p>
-      </div>
-      <div class="">
-        <i class="fas fa-search"></i>
-        <p>Boating</p>
-      </div>
-      <div class="">
-        <i class="fas fa-search"></i>
-        <p>Books</p>
-      </div>
-      <div class="">
-        <i class="fas fa-search"></i>
-        <p>Business</p>
-      </div>
-      <div class="all-borders">
-        <i class="fas fa-search"></i>
-        <p>Business Opportunities</p>
-      </div>
-    </div>
-    <div class="list-row">
-      <div class="">
-        <i class="fas fa-search"></i>
-        <p>Automotive</p>
-      </div>
-      <div class="">
-        <i class="fas fa-search"></i>
-        <p>Beauty</p>
-      </div>
-      <div class="">
-        <i class="fas fa-search"></i>
-        <p>Boating</p>
-      </div>
-      <div class="">
-        <i class="fas fa-search"></i>
-        <p>Books</p>
-      </div>
-      <div class="">
-        <i class="fas fa-search"></i>
-        <p>Business</p>
-      </div>
-      <div class="all-borders">
-        <i class="fas fa-search"></i>
-        <p>Business Opportunities</p>
-      </div>
-    </div>
-    <div class="list-row">
-      <div class="">
-        <i class="fas fa-search"></i>
-        <p>Automotive</p>
-      </div>
-      <div class="">
-        <i class="fas fa-search"></i>
-        <p>Beauty</p>
-      </div>
-      <div class="">
-        <i class="fas fa-search"></i>
-        <p>Boating</p>
-      </div>
-      <div class="">
-        <i class="fas fa-search"></i>
-        <p>Books</p>
-      </div>
-      <div class="">
-        <i class="fas fa-search"></i>
-        <p>Business</p>
-      </div>
-      <div class="all-borders">
-        <i class="fas fa-search"></i>
-        <p>Business Opportunities</p>
-      </div>
-    </div>
-    <div class="list-row">
-      <div class="">
-        <i class="fas fa-search"></i>
-        <p>Automotive</p>
-      </div>
-      <div class="">
-        <i class="fas fa-search"></i>
-        <p>Beauty</p>
-      </div>
-      <div class="">
-        <i class="fas fa-search"></i>
-        <p>Boating</p>
-      </div>
-      <div class="">
-        <i class="fas fa-search"></i>
-        <p>Books</p>
-      </div>
-      <div class="">
-        <i class="fas fa-search"></i>
-        <p>Business</p>
-      </div>
-      <div class="all-borders">
-        <i class="fas fa-search"></i>
-        <p>Business Opportunities</p>
-      </div>
-    </div>
     <div class="list-row">
       <div class="">
         <i class="fas fa-search"></i>

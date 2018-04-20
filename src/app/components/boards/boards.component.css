@@ -1,8 +1,417 @@
-h2 {
-    font-weight: 300;
-}
-
 .container {
 	padding: 2.5em 5em;
 	background: #fff;
+}
+
+.search-bar {
+	width: inherit;
+	border-bottom: 1px solid rgb(228,228,228);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+select {
+    border: none;
+    border-radius: none;
+    outline: none;
+    background: none;
+    text-shadow: none;
+}
+
+.search-bar select {
+	opacity: 0.4;
+    height: 3em;
+    font-size: 1em;
+}
+
+select[name="adlocation"] {
+	width: 60em;
+}
+
+input[name="adlocation"] {
+	width: 60%;
+    height: 40px;
+    font-size: 20px;
+    /* outline: none; */
+    border: 0;
+}
+
+select[name="adcate"] {
+	width: 15em;
+}
+
+.search-bar button {
+	border: none;
+    background: black;
+    color: white;
+    width: 8em;
+    height: 3em;
+    text-shadow: none;
+    font-size: 1em;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+	background: #ffbd00;
+	color: #1d1c21;
+}
+
+.search-bar .divider {
+	display: inline;
+    border-right: 1.5px solid rgba(200,200,200,0.75);
+}
+
+.search-content {
+	display: flex;
+	margin-top: 2em;
+	align-items: flex-start;
+}
+
+.filter {
+	background: rgba(233, 239, 244, 0.48);
+	/*height: 40em;*/
+	border-radius: 5px;
+	margin-right: 3em;
+	padding: 1em;
+	-webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.filter form {
+	display: flex;
+	flex-direction: column;
+	width: 20em;
+}
+
+.search-results {
+	flex-grow: 1;
+	/*background: rgba(200,200,200,0.25);
+	height: 60em;*/
+}
+
+.filter .size-filter,
+.filter .type-filter,
+.filter .price-filter {
+	border-radius: 0.5em;
+	margin: 0em 0em .5em 0em;
+	background: #ffffff;
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+}
+
+.filter .size-filter:hover,
+.filter .type-filter:hover,
+.filter .price-filter:hover {
+	box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+}
+
+.filter .size-filter .size-filter-top,
+.filter .type-filter .type-filter-top,
+.filter .price-filter .price-filter-top {
+	background: #ffffff;
+	width: 18em;
+	height: 3.5em;
+	padding: 0em 1em;
+	border-radius: 0.5em;
+	color: #c3c3c3;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.filter .size-filter .size-filter-top:hover,
+.filter .type-filter .type-filter-top:hover,
+.filter .price-filter .price-filter-top:hover {
+	color: #777777;
+}
+
+.size-filter .size-filter-options input,
+.type-filter .type-filter-options input,
+.filter .board-cats input {
+	position: absolute;
+	left: -9999px;
+}
+
+.size-filter .size-filter-options input + label,
+.type-filter .type-filter-options input + label {
+	display: block;
+	color: #777;
+	padding: .75em 3.5em;
+	position: relative;
+	cursor: pointer;
+}
+
+.filter .board-cats input + label {
+	display: inline-block;
+	color: #777;
+	padding: .75em 3.5em;
+	position: relative;
+	cursor: pointer;
+}
+
+.size-filter .size-filter-options input 
++ label::before,
+.type-filter .type-filter-options input 
++ label::before,
+.filter .board-cats input + label::before {
+	content: '';
+	position: absolute;
+  	left: 1.25em;
+	width: 1.25em;
+	height: 1.25em;
+	border-radius: .2em;
+	border: 1px solid rgba(152, 152, 152, 0.4);
+	margin-right: 1em;
+}
+
+.size-filter .size-filter-options input:checked 
++ label::before,
+.type-filter .type-filter-options input:checked 
++ label::before,
+.filter .board-cats input:checked + label::before {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* content: url(assets/check.png); */
+	background-color: #ffbd00;
+}
+
+.filter .price-filter .price-filter-top {
+	margin-bottom: 0em;
+}
+
+.filter .size-filter div img,
+.filter .type-filter div img,
+.filter .price-filter div img {
+	width: 0.75em;
+	transform: rotate(90deg);
+}
+
+/*.filter .price-filter {
+	background: #ffffff;
+	display: flex;
+	flex-direction: column;
+}*/
+
+.filter .size-filter .top,
+.filter .type-filter .top,
+.filter .price-filter .top {
+	-webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5)
+}
+
+.filter .price-filter .top img,
+.filter .size-filter .top img,
+.filter .type-filter .top img {
+	transform: rotate(-90deg);
+}
+
+.filter .price-filter .price-range-dialogs {
+	display: flex;
+	flex-direction: column;
+	padding: 0em 0.8em 0.8em 0.8em;
+	color: rgb(150,150,150);
+	transition: all 400ms ease-in-out;
+}
+
+.filter .range-thumb-track input[type="range"] {
+	width: 14.5em;
+}
+
+.filter .range-numbers span label {
+	margin: 0em .5em;
+}
+
+.filter .price-filter .button-wrapper {
+	margin-top: .5em;
+	padding-right: 1em;
+	align-self: flex-end;
+}
+
+.range-numbers, .range-thumb-track {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.filter .price-filter .range-numbers {
+	margin-top: .5em;
+}
+
+/*.filter .range-thumb-track {
+	display: flex;
+	justify-content: space-between;
+}*/
+
+.filter .price-filter button {
+	border: none;
+    background: black;
+    color: white;
+    width: 6em;
+    height: 2em;
+    text-shadow: none;
+    font-size: 0.75em;
+    border-radius: 2.5px;
+}
+
+.filter label {
+	font-size: 0.8em;
+}
+
+.filter input {
+	font-size: 0.8em;
+	height: 2.5em;
+	width: 5.5em;
+}
+
+.filter .price-filter .dark,
+.filter .size-filter .dark,
+.filter .type-filter .dark {
+	color: #777777;
+}
+
+/* .filter .price-filter .none,
+.filter .size-filter .none,
+.filter .type-filter .none {
+	display: none;
+} */
+
+/*.advert-box .advert-period-options {
+	display: flex;
+	align-items: center;
+}
+
+.advert-box input[type="checkbox"] {
+	border: none;
+    border-radius: none;
+    outline: none;
+    background: none;
+    text-shadow: none;
+}
+
+.advert-box input[type="checkbox"]:checked {
+	background: #ffffff;
+}
+
+.advert-box {
+	margin-top: 1em;
+	background: #ffffff;
+}
+
+.advert-box select[name="advert-period"] {
+	-webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5)
+}
+
+.advert-period-options .week-labels,
+.advert-period-options .month-labels,
+.advert-period-options .other-labels {
+	display: flex;
+	flex-direction: column;
+}
+
+.advert-period-options .week-labels label,
+.advert-period-options .month-labels label,
+.advert-period-options .other-labels label {
+	display: flex;
+	font-size: .2em;
+	align-items: center;
+	color: rgb(150,150,150);
+	font-style: italic;
+}
+
+.advert-period-options .week-labels input,
+.advert-period-options .month-labels input,
+.advert-period-options .other-labels input {
+	margin: .5em 0em;
+}*/
+
+.search-results {
+	display: flex;
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
+
+.search-results .search-result {
+	width: 16em;
+	margin: 0em 2em 2em 0em;
+	background: #ffffff;
+	-webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+	position: relative;
+	cursor: pointer;
+}
+
+.search-results .search-result:hover {
+	-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .6);;
+	-moz-box-shadow: 0 0 20px rgba(0, 0, 0, .6);;
+	box-shadow: 0 0 20px rgba(0, 0, 0, .6);
+}
+
+.search-results .search-result-text {
+	margin: 0em;
+	padding: .25em .5em ;
+}
+
+.search-results .search-result .main-img {
+	width: 16em;
+	height: 8.5em;
+}
+
+.search-results .search-result .certified {
+	width: 1.4em;
+	height: 1.4em;
+	position: absolute;
+	top: 0em;
+	right: 0em;
+	background: #ffbd00;
+	-webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+	padding: .2em;
+	display: none;
+}
+
+.search-results .search-result .show {
+	display: block;
+}
+
+.search-results .search-result h4 {
+	margin: 0em;
+}
+
+.search-results .search-result-details {
+	display: flex;
+	font-size: .5em;
+}
+
+.search-results .search-result-details p {
+	color: rgb(150,150,150);
+	margin: 0em;
+	padding: 0em .2em;
+}
+
+.search-results .search-result button {
+	border: none;
+    background: black;
+    color: white;
+    width: 5.5em;
+    height: 1.8em;
+    text-shadow: none;
+    font-size: 0.7em;
+    border-radius: 2.5px;
+    margin: .75em 0em;
+}
+
+.search-results .search-result button:hover {
+	background: #d8d8d8;
+	color: #1d1c21;
 }
