@@ -19,32 +19,43 @@ export class ApiService {
 
   }
 
-  getAssets(link) {
-    const i = link.indexOf('?');
-    link = link.substring(i);
-    console.log(this.url + 'assets' + link);
-
-    return this._http.get(this.url + 'assets' + link)
-      .subscribe(resp => {
-          console.log(resp);
-      });
-  }
-
   getSingleAsset(id) {
     return this._http.get(this.url + 'assets/' + id);
     // return this._http.get('assets/asset.json');
   }
 
-  getData() {
+  getAssets() {
     // return this._http.get('assets/assets.json');
     return this._http.get(this.url + 'assets');
   }
 
-  getBoardTypes() {
-    return this._http.get(this.url + 'assets/?type_id').subscribe(data => {
-      this.temp = data;
-      // console.log(this.temp);
-    });
+  getAssetTypes() {
+    return this._http.get(this.url + 'asset_types');
   }
+
+  getAssetGroups() {
+    return this._http.get(this.url + 'asset_type_groups');
+  }
+
+  getAssetCategories() {
+    return this._http.get(this.url + 'asset_categories');
+  }
+
+  // getAssets(link) {
+  //   const i = link.indexOf('?');
+  //   link = link.substring(i);
+  //   console.log(this.url + 'assets' + link);
+
+  //   return this._http.get(this.url + 'assets' + link)
+  //     .subscribe(resp => {
+  //         console.log(resp);
+  //     });
+  // }
+
+  // Some Endpoints
+  // this.url + 'asset_type_groups'
+  // this.url + 'asset_types'
+  // this.url + 'asset_categories'
+  // this.url + 'asset_sizes'
 
 }

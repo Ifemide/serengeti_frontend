@@ -3,42 +3,42 @@
 </div>
 
 <div class="container">
-  <form class="search-bar" [formGroup]="mainform" (onSubmit)="goSearch(mainform)">
-    <select name="adlocation" formControlName="adlocation">
+  <form class="search-bar" [formGroup]="mainform" (onSubmit)="filterResults(mainform)">
+    <!--  -->
+    <!-- <select name="adlocation" formControlName="adlocation">
       <option value="">Choose location for your advert</option>
       <option value="vi">Victoria Island, Lagos</option>
       <option value="yb">Yaba, Ebute-Meta, Lagos</option>
-    </select>
+    </select> -->
+    <input type="text" name="adlocation" formControlName="adlocation">
     <p class="divider"></p>
     <select name="adcate" formControlName="adcate">
-      <option value="">Choose Category</option>
-      <option value="1">Board</option>
-      <option value="2">PRO-ads</option>
+      <option *ngFor="let category of assetCategories" [value]="category.id">{{ category.attributes.title }}</option>
     </select>
-    <button type="submit">GO!</button>
+    <button type="submit" (click)="changeLocation(mainform)">GO!</button>
   </form>
 <!-- <p>Value: {{ mainform.value | json }}</p> -->
 <!-- <p>Value: {{ filterform.value | json }}</p> -->
 <div class="search-content">
   <div class="filter">
-    <form>
-      <div class="board-cats">
-        <input id="static" type="checkbox">
-        <label for="static">Static</label>
-        <input id="dynamic" type="checkbox">
-        <label for="dynamic">Dynamic</label>
+    <form [formGroup]="filterform">
+      <div class="board-cats" formGroupName="adgroup">
+        <div *ngFor="let group of assetGroups; let i = index">
+          <input id="{{i}}" type="checkbox" [value]="group.id" formControlName="grouptype">
+          <label for="{{i}}">{{ group.attributes.title }}</label>
+        </div>
       </div>
       <div class="size-filter">
         <div class="size-filter-top" [ngClass]="{'dark top': sizes }" (click)="showSizeOptions()">
           <p>All Sizes</p>
           <img src="assets/ic-play-arrow-24-px.svg">
         </div>
-        <div class="size-filter-options">
-          <input id="big-size" type="checkbox" value="big-size">
+        <div class="size-filter-options" formGroupName="adsize">
+          <input id="big-size" type="checkbox" value="big-size" formControlName="bigsize">
           <label for="big-size">2000 x 400</label>
-          <input id="small-size" type="checkbox" value="small-size">
+          <input id="small-size" type="checkbox" value="small-size" formControlName="smallsize">
           <label for="small-size">1500 x 300</label>
-          <input id="medium-size" type="checkbox" value="medium-size">
+          <input id="medium-size" type="checkbox" value="medium-size" formControlName="mediumsize">
           <label for="medium-size">1800 x 350</label>
         </div>
       </div>
@@ -48,19 +48,12 @@
           <p>All Types</p>
           <img src="assets/ic-play-arrow-24-px.svg">
         </div>
-        <div class="type-filter-options">
-          <input id="flag-pole" type="checkbox" value="flag-pole">
-          <label for="flag-pole">Flag Poles</label>
-          <input id="mobile-screen" type="checkbox" value="mobile-screen">
-          <label for="mobile-screen">Mobile Screens</label>
-          <input id="wall-drape" type="checkbox" value="wall-drape">
-          <label for="wall-drape">Wall Drapes</label>
-          <input id="gantry" type="checkbox" value="gantry">
-          <label for="gantry">Gantries</label>
-          <input id="led-cube" type="checkbox" value="led-cube">
-          <label for="led-cube">LED Cubes</label>
-          <input id="other" type="checkbox" value="other">
-          <label for="other">Others</label>
+        <div class="type-filter-options" formGroupName="adtype">
+          <div *ngFor="let type of assetTypes; let i = index">
+            <input id="a{{i}}" type="checkbox" [value]="type.id" formControlName="type">
+            <!-- (change)="checkBox($event, type)" -->
+            <label for="a{{i}}">{{ type.attributes.title }}</label>
+          </div>
         </div>
       </div>
 
@@ -70,22 +63,22 @@
           <img src="assets/ic-play-arrow-24-px.svg">
         </div>
         <div class="price-range-dialogs">
-          <div class="range-thumb-track">
+          <!-- <div class="range-thumb-track">
             <label>Range</label>
             <input type="range" name="">
-          </div>
-          <div class="range-numbers">
+          </div> -->
+          <div class="range-numbers" formGroupName="adprice">
             <label>From</label>
             <span>
-              <input type="number">
-              <label>To</label>
-              <input type="number">
+              <input type="number" formControlName="pricestart">
+              <label>to</label>
+              <input type="number" formControlName="priceend">
             </span>
           </div>
         </div>
       </div>
       <div class="button-wrapper">
-        <button type="submit">Apply</button>
+        <button type="submit" (click)="filterResults(filterform)">Apply</button>
       </div>
     </form>
   </div>

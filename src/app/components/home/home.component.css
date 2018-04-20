@@ -75,7 +75,21 @@ form select {
 	font-size: 0.9em;
 	padding: 1.5em;
 	height: 2.5em;
-	margin-right: .75em;
+	margin-right: .5em;
+}
+
+form input {
+	border: none;
+    outline: none;
+    background: #ffffff;
+	text-shadow: none;
+	border-radius: 4px;
+	color: #979797;
+	width: 22em;
+	margin-right: .5em;
+	font-size: 1em;
+	height: 2.1em;
+	padding-left: .75em;
 }
 
 form select[name="area"] {
@@ -90,7 +104,7 @@ form .submit {
 	outline: none;
 	border: none;
 	line-height: 2em;
-	padding: .5em .5em;
+	padding: .4em .5em;
 	background: #1d1c21;
 	color: #ffffff;
 	font-size: .8em;
@@ -106,6 +120,8 @@ form .submit:hover {
 .jumbo-pack-content a {
 	color: #ffbd00;
 	opacity: 0.75;
+	cursor: pointer;
+	text-decoration: underline;
 }
 
 .jumbo-pack-content a:hover {

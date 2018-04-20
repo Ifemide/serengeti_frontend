@@ -16,13 +16,16 @@ export class ProductComponent implements OnInit {
   constructor(private _route: ActivatedRoute, private _api: ApiService) {
 
     this._route.paramMap.subscribe(params => {
+      // console.log(params.get('id'));
       this.id = params.get('id');
+      // get('id');
+      console.log(params);
     });
 
     this.asset = this._api.getSingleAsset(this.id)
-      .subscribe(result => {
-      this.asset = result;
-      console.log(this.asset);
+      .subscribe((result: any) => {
+      this.asset = result.data;
+      // console.log(this.asset);
       // this.asset = this.asset.data;
     });
 

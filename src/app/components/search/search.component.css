@@ -122,9 +122,15 @@ select[name="adcate"] {
 	color: #777777;
 }
 
+.filter .board-cats {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: .75em;
+}
+
 .size-filter .size-filter-options input,
 .type-filter .type-filter-options input,
-.filter .board-cats input {
+.filter .board-cats div input {
 	position: absolute;
 	left: -9999px;
 }
@@ -138,10 +144,14 @@ select[name="adcate"] {
 	cursor: pointer;
 }
 
-.filter .board-cats input + label {
-	display: inline-block;
+.filter .board-cats div {
+	width: 7em;
+	margin: .5em;
+}
+
+.filter .board-cats div input + label {
 	color: #777;
-	padding: .75em 3.5em;
+	padding: .75em .75em .75em 3.5em;
 	position: relative;
 	cursor: pointer;
 }
@@ -150,7 +160,7 @@ select[name="adcate"] {
 + label::before,
 .type-filter .type-filter-options input 
 + label::before,
-.filter .board-cats input + label::before {
+.filter .board-cats div input + label::before {
 	content: '';
 	position: absolute;
   	left: 1.25em;
@@ -165,7 +175,7 @@ select[name="adcate"] {
 + label::before,
 .type-filter .type-filter-options input:checked 
 + label::before,
-.filter .board-cats input:checked + label::before {
+.filter .board-cats div input:checked + label::before {
 	display: flex;
 	justify-content: center;
 	align-items: center;

@@ -6,50 +6,50 @@
   <div class="product-wrapper">
     <div class="product-wrapper-top">
       <div class="product-img">
-        <img class="main-img-lg" src="{{ asset.data.attributes.asset_image_3 }}">
+        <img class="main-img-lg" src="{{ asset.attributes.asset_image_3 }}">
         <!-- <img class="certified-lg show" src="assets/award.png"> 
           src="assets/background.png" -->
       </div>
       <div class="product-details">
-        <h2>{{ asset.data.attributes.title }}</h2>
+        <h2>{{ asset.attributes.title }}</h2>
         <div class="type-location">
-          <p>{{ asset.data.attributes.asset_type_group.title }}</p>
+          <p>{{ asset.attributes.asset_type_group.title }}</p>
           <p class="divider-lg">|</p>
-          <p>{{ asset.data.attributes.category.title }}</p>
+          <p>{{ asset.attributes.category.title }}</p>
           <p class="divider-lg">|</p>
-          <p>{{ asset.data.attributes.location }}</p>
+          <p>{{ asset.attributes.location }}</p>
         </div>
         <div class="main-desc">
           <p class="bold">Description</p>
-          <p class="normal">{{ asset.data.attributes.description }}</p>
+          <p class="normal">{{ asset.attributes.description }}</p>
         </div>
         <div class="size-price">
           <div>
             <p class="bold">Size</p>
             <!-- {{ asset.attributes. }} -->
-            <p class="normal">{{ asset.data.attributes.asset_specification }}</p>
+            <p class="normal">{{ asset.attributes.asset_specification }}</p>
           </div>
           <p class="line-divider"></p>
           <div>
             <p class="bold">Bidding Price</p>
-            <p class="normal">{{ asset.data.attributes.minimum_price }}</p>
+            <p class="normal">{{ asset.attributes.minimum_price }}</p>
           </div>
         </div>
         <div class="crowd-eyes">
           <div>
             <p class="bold">Crowd Analytics</p>
-            <p class="normal">{{ asset.data.attributes.crowd_analytics }} per hour</p>
+            <p class="normal">{{ asset.attributes.crowd_analytics }} per hour</p>
           </div>
           <p class="line-divider"></p>
           <div>
             <p class="bold">Eyeballs per Day</p>
-            <p class="normal">{{ asset.data.attributes.eyeballs_per_day }}</p>
+            <p class="normal">{{ asset.attributes.eyeballs_per_day }}</p>
           </div>
         </div>
         <div class="audience-time">
           <div>
             <p class="bold">Proposed Audience Pack</p>
-            <p class="normal">{{ asset.data.attributes.proposed_audience_pack }}</p>
+            <p class="normal">{{ asset.attributes.proposed_audience_pack }}</p>
           </div>
           <p class="line-divider"></p>
           <div>
@@ -60,7 +60,7 @@
         <div class="map-crowd">
           <div>
             <p class="bold">Map Coordinates</p>
-            <p class="normal">{{ asset.data.attributes.latlng }}</p>
+            <p class="normal">{{ asset.attributes.latlng }}</p>
           </div>
           <p class="line-divider"></p>
           <div>
@@ -73,7 +73,7 @@
     <div class="product-wrapper-bottom">
       <div>
         <p class="normal bid-button" [routerLink]="['/manage', asset.id]">
-          Starting From &nbsp; <span> {{ asset.data.attributes.minimum_price | currency: 'NGN' }}</span>
+          Starting From &nbsp; <span> {{ asset.attributes.minimum_price | currency: 'NGN' }}</span>
         </p>
         <!-- <p>♥</p> -->
       </div>
