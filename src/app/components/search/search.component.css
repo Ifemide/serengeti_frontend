@@ -179,7 +179,7 @@ select[name="adcate"] {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	content: url(assets/check.png);
+	/* content: url(assets/check.png); */
 	background-color: #ffbd00;
 }
 

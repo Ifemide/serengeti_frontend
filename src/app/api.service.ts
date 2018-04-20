@@ -15,6 +15,7 @@ export class ApiService {
 
   constructor(private _http: HttpClient) {
 
+    // this.url = 'http://localhost:3000/api/';
     this.url = 'http://api-v1.prideland.ng/api/';
 
   }
@@ -24,38 +25,49 @@ export class ApiService {
     // return this._http.get('assets/asset.json');
   }
 
-  getAssets() {
-    // return this._http.get('assets/assets.json');
-    return this._http.get(this.url + 'assets');
+  doFilter(f_url) {
+    return this._http.get(this.url + f_url);
   }
 
-  getAssetTypes() {
-    return this._http.get(this.url + 'asset_types');
+  getData() {
+    return this._http.get(this.url + 'assets');
   }
 
   getAssetGroups() {
     return this._http.get(this.url + 'asset_type_groups');
   }
 
+  getAssetTypes() {
+    return this._http.get(this.url + 'asset_types');
+  }
+
+  getAssetFaces() {
+    return this._http.get(this.url + 'asset_faces');
+  }
+
   getAssetCategories() {
     return this._http.get(this.url + 'asset_categories');
   }
 
-  // getAssets(link) {
-  //   const i = link.indexOf('?');
-  //   link = link.substring(i);
-  //   console.log(this.url + 'assets' + link);
+  getBoardSizes() {
+    return this._http.get(this.url + 'data/board_sizes');
+  }
 
-  //   return this._http.get(this.url + 'assets' + link)
-  //     .subscribe(resp => {
-  //         console.log(resp);
-  //     });
-  // }
+  getAssetTypeGroups() {
+    return this._http.get(this.url + 'asset_type_groups');
+  }
 
-  // Some Endpoints
-  // this.url + 'asset_type_groups'
-  // this.url + 'asset_types'
-  // this.url + 'asset_categories'
-  // this.url + 'asset_sizes'
+  loginUser(form) {
+    return this._http.post(this.url + 'auth/sign_in', form, {observe: 'response'});
+  }
+
+  registerUser(form) {
+    return this._http.post(this.url + 'auth', form, {observe: 'response'});
+  }
+
+  makeBookingRequest(form) {
+    return this._http.post(this.url + 'bookings', form, { observe: 'response',
+    headers: JSON.parse(localStorage.getItem('PLU:authHeaders'))});
+  }
 
 }

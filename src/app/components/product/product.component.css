@@ -282,3 +282,128 @@
 	background: #d8d8d8;
 	color: #1d1c21;
 }
+
+.media-buyer-form {
+    position: absolute;
+    top: 0em;
+    right: 0em;
+    background: #1d1c21;
+    width: 30em;
+    height: 100vh;
+    transition: 0.3s ease-in-out;
+}
+
+.form-all {
+    padding: 8em 4em 0em 3em;
+}
+
+.form-all div:first-child {
+    display: none;
+}
+
+.media-buyer-form p {
+    color: #ffffff;
+    margin-bottom: .5em;
+}
+
+.media-buyer-form select {
+    border: none;
+    border-radius: none;
+    outline: none;
+    background: none;
+    text-shadow: none;
+    color: #ffffff;
+    width: 100%;
+    height: 2.5em;
+    font-size: 1em;
+	opacity: 0.4;
+	color: white;
+}
+
+.select {
+    border-bottom: 1px solid #979797;
+    opacity: 0.4;
+}
+
+ .select:hover {
+    opacity: 1;
+}
+
+.media-buyer-form input {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #979797;
+    height: 2.5em;
+    background: none;
+    font-size: 1em;
+    width: 100%;
+	opacity: 0.4;
+	color: white;
+}
+
+.media-buyer-form input:active,
+.media-buyer-form input:focus,
+.media-buyer-form select:active,
+.media-buyer-form select:focus {
+    outline: none;
+    background: none;
+    -webkit-caret-color: #ffbd00;
+    -moz-caret-color: #ffbd00;
+    caret-color: #ffbd00;
+    opacity: 1;
+}
+
+.media-buyer-form button {
+    outline: none;
+    border: none;
+    margin-top: 3em;
+    background: #ffbd00;
+    color: #1d1c21;
+    border-radius: 4px;
+    font-size: 1em;
+    padding: .75em 2em;
+    cursor: pointer;
+}
+
+.form-all button:hover {
+    background: none;
+    border: 1px solid #ffbd00;
+    color: #ffbd00
+}
+
+.selected .title {
+    font-weight: 900;
+    opacity: .5;
+}
+
+.selected div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.selected div p {
+    margin-right: .5em;
+    margin-top: 0em;
+    opacity: .5;
+}
+
+.selected div .divider {
+    border-right: 2px solid #ffffff;
+    opacity: .4;
+}
+
+.selected .change {
+    color: #ffbd00;
+    text-decoration: underline;
+    font-size: 80%;
+    opacity: 0.6;
+    margin-top: 0em;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.selected .change:hover {
+    transition: 100ms ease-in-out;
+    opacity: 0.8;
+}

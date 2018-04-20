@@ -3,5 +3,126 @@
 </div>
 
 <div class="container">
-  <h1>This page will eventually hold content for Boards </h1>
+  <form class="search-bar" [formGroup]="mainform" >
+    <input type="text" name="adlocation" formControlName="adlocation" placeholder="Type location here">
+    <p class="divider"></p>
+    <select name="adcate" formControlName="adcate">
+      <option>Choose category</option>
+      <option value="{{cat.id}}" *ngFor="let cat of assetsCategories.data">{{cat.attributes.title}}</option>
+    </select>
+    <button type="submit" (click)="goSearch(mainform)">GO!</button>
+  </form>
+<!-- <p>Value: {{ mainform.value | json }}</p> -->
+<!-- <p>Value: {{ filterform.value | json }}</p> -->
+<div class="search-content">
+  <div class="filter">
+    <form>
+      <p>Grouping</p>
+      <div class="board-cats">
+        <div *ngFor="let s of assetsTypeGroup.data; let i = index">
+            <input id="tg{{i}}" (click)="saveAssetTypeGroupFilter($event.target.value)" type="checkbox" value="{{s.id}}">
+            <label for="tg{{i}}">{{s.attributes.title}}</label>
+        </div>
+        <!-- <input id="static" type="checkbox">
+        <label for="static">Static</label>
+        <input id="dynamic" type="checkbox">
+        <label for="dynamic">Dynamic</label>
+        <input id="static" type="checkbox">
+        <label for="static">Static</label>
+        <input id="dynamic" type="checkbox">
+        <label for="dynamic">Dynamic</label> -->
+      </div>
+
+      <div class="type-filter">
+        <div class="type-filter-top" [ngClass]="{'dark top': types }" (click)="showTypeOptions()">
+          <p>Asset Faces</p>
+          <img src="assets/ic-play-arrow-24-px.svg">
+        </div>
+        <div class="type-filter-options">
+            <div *ngFor="let s of assetFaces.data; let i = index">
+                <input id="face{{i}}" (click)="saveAssetFaceFilter($event.target.value)" type="checkbox" value="{{s.id}}">
+                <label for="face{{i}}">{{s.attributes.title}}</label>
+            </div>
+        </div>
+      </div>
+  
+      <div class="size-filter">
+        <div class="size-filter-top" [ngClass]="{'dark top': sizes }" (click)="showSizeOptions()">
+          <p>All Sizes</p>
+          <img src="assets/ic-play-arrow-24-px.svg">
+        </div>
+        <div class="size-filter-options">
+          <div *ngFor="let s of boardSizes.data; let i = index">
+              <input id="size{{i}}" (click)="saveAssetSizeFilter($event.target.value)" type="checkbox" value="{{s.asset_specification}}">
+              <label for="size{{i}}">{{s.asset_specification}}</label>
+          </div>
+          <!-- <input id="small-size" type="checkbox" value="small-size">
+          <label for="small-size">1500 x 300</label>
+          <input id="medium-size" type="checkbox" value="medium-size">
+          <label for="medium-size">1800 x 350</label> -->
+        </div>
+      </div>
+
+      <div class="type-filter">
+        <div class="type-filter-top" [ngClass]="{'dark top': types }" (click)="showTypeOptions()">
+          <p>All Types</p>
+          <img src="assets/ic-play-arrow-24-px.svg">
+        </div>
+        <div class="type-filter-options">
+            <div *ngFor="let s of assetTypes.data; let i = index">
+                <input id="type{{i}}" (click)="saveAssetTypeFilter($event.target.value)" type="checkbox" value="{{s.id}}">
+                <label for="type{{i}}">{{s.attributes.title}}</label>
+            </div>
+        </div>
+      </div>
+
+      <!-- <div class="price-filter">
+        <div class="price-filter-top" [ngClass]="{'dark top': prices }" (click)="showPriceOptions()">
+          <p>Price Range</p>
+          <img src="assets/ic-play-arrow-24-px.svg">
+        </div>
+        <div class="price-range-dialogs">
+          <div class="range-thumb-track">
+            <label>Range</label>
+            <input type="range" name="">
+          </div>
+          <div class="range-numbers">
+            <label>From</label>
+            <span>
+              <input type="number">
+              <label>To</label>
+              <input type="number">
+            </span>
+          </div>
+        </div>
+      </div> -->
+      <div class="button-wrapper">
+        <button type="submit" (click)="goSearch(mainform)">Apply</button>
+      </div>
+    </form>
+  </div>
+  <!-- (click)="viewAsset(asset.id)" -->
+  <div class="search-results">
+    <div class="search-result" [routerLink]="['/asset', asset.id]" *ngFor="let asset of assets.data">
+      <img class="main-img" src="{{ asset.attributes.asset_image_3 }}">
+      <!-- <img class="certified show" src="assets/award.png"> 
+        {{ asset.attributes.asset_image_3 }} src="assets/background.png"-->
+      <div class="search-result-text">
+        <h4>{{ asset.attributes.location }}</h4> 
+        <div class="search-result-details">
+          <p>{{ asset.attributes.asset_type_group.title }}</p>
+          <p class="divider">|</p>
+          <p>{{ asset.attributes.category.title }}</p>
+          <p class="divider">|</p>
+          <p>{{ asset.attributes.asset_specification }}</p>
+          <p>|</p>
+          <p>N{{ asset.attributes.minimum_price }}</p>
+        </div>
+        <button>Explore</button>
+      </div>
+    </div>
+
+      <h2 *ngIf="assets.data && !assets.data.length"> No Asset Available for your search</h2>
+  </div>
+</div>
 </div>

@@ -6,9 +6,7 @@
   <div class="product-wrapper">
     <div class="product-wrapper-top">
       <div class="product-img">
-        <img class="main-img-lg" src="{{ asset.attributes.asset_image_3 }}">
-        <!-- <img class="certified-lg show" src="assets/award.png"> 
-          src="assets/background.png" -->
+        <img class="main-img-lg" src="{{ asset.data.attributes.asset_image_1 }}">
       </div>
       <div class="product-details">
         <h2>{{ asset.attributes.title }}</h2>
@@ -72,8 +70,8 @@
     </div>
     <div class="product-wrapper-bottom">
       <div>
-        <p class="normal bid-button" [routerLink]="['/manage', asset.id]">
-          Starting From &nbsp; <span> {{ asset.attributes.minimum_price | currency: 'NGN' }}</span>
+        <p class="normal bid-button" (click)="showMediaBuyerForm()">
+          Make Request &nbsp; <span> {{ asset.data.attributes.minimum_price | currency: 'NGN' }}</span>
         </p>
         <!-- <p>♥</p> -->
       </div>
@@ -81,69 +79,91 @@
     </div>
   </div>
 
-  <!-- <div class="add-on">
-    <div class="add-on-top">
-      <p class="side-line"></p>
-      <h2>Add Ons</h2>
-      <p class="side-line"></p>
-    </div>
-    <div class="add-on-list">
-      <img src="assets/background.png">
-      <img src="assets/background.png">
-      <img src="assets/background.png">
-    </div>
-  </div>
+  <form class="media-buyer-form" [ngStyle]="{'right':mediaBuyerForm === true ? '0em' : '-30em' }">
+    <span (click)="closeBookingDialog()" style="font-size: 30px; margin-left: 20px; text-align: left; color: white; cursor: pointer;">X</span>
+      <!--  [ngStyle]="{'display':mediaBuyerForm === true ? 'block' : 'none' }"
+        -->
 
-  <div class="similar-options">
-    <div class="similar-options-top">
-      <p class="side-line"></p>
-      <h2>Similar Options</h2>
-      <p class="side-line"></p>
-    </div>
-    <div class="similar-options-list">
-      <div class="search-result">
-        <img class="main-img" src="assets/background.png">
-        <img class="certified show" src="assets/award.png">
-        <div class="search-result-text">
-          <h4>Lagos, Adeola-Odeku, VI</h4>
-          <div class="search-result-details">
-            <p>Digital Board</p>
-            <p class="divider">|</p>
-            <p>2019 x 3200</p>
-            <p>|</p>
-            <p>From N3.5m</p>
+        <div class="form-all" *ngIf="loginReq">
+            <h1 style="color: white">Login Required</h1>      
+            
+            <div>
+              <p>Email </p>
+              <input [(ngModel)]="user.email" name="email" type="email" placeholder="type here..">
+            </div>
+       
+            <div>
+              <p>Password</p>
+              <input [(ngModel)]="user.password" name="password" type="password" placeholder="type here..">
+            </div>
+       
+              <div *ngIf="showReg">
+                <p>Name</p>
+                <input [(ngModel)]="user.name" name="uname" type="text" placeholder="type here..">
+              </div>
+        
+              <div *ngIf="showReg">
+                <p>Phone number</p>
+                <input [(ngModel)]="user.phonenumber" name="phone" type="text" placeholder="type here..">
+              </div>
+       
+            <button type="submit" (click)="authenticateUser()">{{showReg ? "Register" : "Login"}}</button>
+            <button class="btn" (click)="showRegister()"> {{showReg ? "Already have an account ? Login" : "Do not have an account, Register"}}  </button>
           </div>
-          <button>Explore</button>
-        </div>
+       
+   <div class="form-all" *ngIf="!loginReq">
+
+     <div [ngStyle]="{'display':drawer === true ? 'block' : 'none' }">
+       <p>Type of Campaign</p>
+       <div class="select">
+         <select name="campaign-type">
+           <option value="board">Board</option>
+           <option value="PRO-ad">PRO-ad</option>
+         </select>
+       </div>
+     </div>
+
+     <div class="selected" *ngIf="asset.id > 0">
+       <p>Board Campaign</p>
+       <p class="title">{{ asset.attributes.title }}</p>
+       <div>
+         <p>{{ asset.attributes.asset_type_group.title }}</p>
+         <p class="divider"></p>
+         <p>{{ asset.attributes.category.title }}</p>
+         <p class="divider"></p>
+         <p>{{ asset.attributes.location }}</p>
+       </div>
+       <p class="change" routerLink="/search">change</p>
+     </div>
+
+     <div>
+        <p>Contact Person Name</p>
+        <input [(ngModel)]="booking.contact_person_name" name="contact_person_name"  type="text" placeholder="type here..">
       </div>
-      <div class="search-result">
-        <img class="main-img" src="assets/background.png">
-        <div class="search-result-text">
-          <h4>Lagos, Adeola-Odeku, VI</h4>
-          <div class="search-result-details">
-            <p>Digital Board</p>
-            <p class="divider">|</p>
-            <p>2019 x 3200</p>
-            <p>|</p>
-            <p>From N3.5m</p>
-          </div>
-          <button>Explore</button>
-        </div>
+
+     <div>
+        <p>Contact Person Phone Number</p>
+        <input [(ngModel)]="booking.contact_person_phone" name="contact_person_phone" type="text" placeholder="type here..">
       </div>
-      <div class="search-result">
-        <img class="main-img" src="assets/background.png">
-        <div class="search-result-text">
-          <h4>Lagos, Adeola-Odeku, VI</h4>
-          <div class="search-result-details">
-            <p>Digital Board</p>
-            <p class="divider">|</p>
-            <p>2019 x 3200</p>
-            <p>|</p>
-            <p>From N3.5m</p>
-          </div>
-          <button>Explore</button>
-        </div>
-      </div>
-    </div> 
-  </div>-->
+ 
+   
+         <div>
+       <p>Contact Person Email</p>
+       <input [(ngModel)]="booking.contact_person_email" name="contact_person_email" type="email" placeholder="type here..">
+     </div>
+
+     <div>
+       <p>Campaign Budget</p>
+       <input [(ngModel)]="booking.campaign_budget" name="campaign_budget" type="number" placeholder="type here..">
+     </div>
+
+     <div>
+       <p>Campaign Duration (in months)</p>
+       <input [(ngModel)]="booking.campaign_duration" name="campaign_duration" type="number" placeholder="type here..">
+     </div>
+
+     <button type="submit" (click)="makeBooking()">Submit</button>
+   </div>
+
+ </form>
 </div>
