@@ -92,8 +92,7 @@ form select {
 	color: #979797;
 	background: #ffffff;
 	font-size: 0.9em;
-	padding: 1.5em;
-	height: 2.5em;
+	padding: .75em;
 	margin-right: .5em;
 }
 
@@ -107,7 +106,7 @@ form input {
 	width: 22em;
 	margin-right: .5em;
 	font-size: 1em;
-	height: 2.1em;
+	height: 2.4em;
 	padding-left: .75em;
 }
 
@@ -117,25 +116,21 @@ form select[name="area"] {
 
 form select[name="adtype"] {
 	width: 12em;
-    margin-left: 120px;
-    height: 50px;
-    font-size: 20px;
+    height: 2.5em;
+    font-size: 1em;
 }
 
 form .submit {
 	outline: none;
 	border: none;
-	line-height: 2em;
-	padding: .4em .5em;
+	padding: .5em;
 	background: #1d1c21;
 	color: #ffffff;
-	font-size: .8em;
 	border-radius: 4px;
 	cursor: pointer;
-	/*margin-left: 0.8em;*/
-	height: 50px;
-    width: 100px;
-    font-size: 15px;
+	height: 2.5em;
+    width: 5em;
+    font-size: 1em;
 }
 
 form .submit:hover {
