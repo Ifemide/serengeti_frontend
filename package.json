@@ -9,8 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --base-href https://prideland-ng.herokuapp.com/",
-    "deploy": "ng build --prod --base-href https://ifemide.github.io/serengeti_frontend/ && angular-cli-ghpages --branch gh-pages"
+    "deploy": "ng build --prod --base-href https://serengeti.herokuapp.com/"
   },
   "engines": {
     "node": "7.10.1",
