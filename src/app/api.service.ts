@@ -20,6 +20,10 @@ export class ApiService {
 
   }
 
+  getAssets() {
+    return this._http.get(this.url + 'assets/');
+  }
+
   getSingleAsset(id) {
     return this._http.get(this.url + 'assets/' + id);
     // return this._http.get('assets/asset.json');
