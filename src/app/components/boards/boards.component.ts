@@ -18,7 +18,7 @@ export class BoardsComponent implements OnInit {
     this._location = this.getParameterByName('_location', location.href);
     this._filter_prop._asset_category_id = this.getParameterByName('category_id', location.href);
     // this.defSearch(this._location, this._filter_prop._asset_category_id);
-    console.log("I am doing this")
+    // console.log("I am doing this")
   }
   private getParameterByName(name, url) {
     if (!url) url = window.location.href;

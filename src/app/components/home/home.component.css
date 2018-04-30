@@ -232,54 +232,89 @@ form .submit:hover {
 .img-small {
 	width: 14em;
 	height: 12.5em;
-	background-color: gold;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+}
+
+.img-small img {
+	width: 25em;
+	margin: -1em;
+}
+
+.overlay-small {
+	width: 14em;
+	height: 12.5em;
+	position: absolute;
+	cursor: pointer;
+	top: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	text-align: center;
 }
 
 .img-large-h {
 	width: 30em;
 	height: 12.5em;
-	background-color: lightcoral;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+}
+
+.img-large-h img {
+	width: 32em;
+	margin: -1em;
+	margin-top: -7.5em;
+}
+
+.img-large-h p, .img-small p, .img-large-v p {
+	position: absolute;
+	color: #ffffff;
+}
+
+.overlay-large-h {
+	width: 30em;
+	height: 12.5em;
+	position: absolute;
+	cursor: pointer;
+	top: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	text-align: center;
-	color: #ffffff;
+}
+
+.overlay-large-h:hover, .overlay-large-v:hover, .overlay-small:hover {
+	background: #ffbd00;
+}
+
+.overlay-large-h:hover ~ p, .overlay-large-v:hover ~ p,
+.overlay-small:hover ~ p {
+	color: #1d1c21;
 }
 
 .img-large-v {
 	width: 14em;
 	height: 26.9em;
-	background-color: lightcoral;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+}
+
+.img-large-v img {
+	width: 21em;
+	margin: -1em;
+	margin-left: -6em;
+}
+
+.overlay-large-v {
+	width: 14em;
+	height: 26.9em;
+	position: absolute;
+	cursor: pointer;
+	top: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	text-align: center;
-	color: #ffffff;
-}
-
-.img-small:hover {
-	/*width: 260px;
-	height: 230px;*/
-	background-color: black;
-	color: #ffffff;
-}
-
-.img-large-h:hover {
-	/*width: 550px;
-	height: 230px;*/
-	background-color: deepskyblue;
-	color: #1d1c21;
-}
-
-.img-large-v:hover {
-	/*width: 260px;
-	height: 490px;*/
-	background-color: deepskyblue;
-	color: #1d1c21;
 }
 
 .right-row-one {
@@ -321,27 +356,30 @@ form .submit:hover {
 }
 
 .prem {
-	max-width: 547px;
-	margin-right: 25px;
+	width: 30em;
+	margin-right: 2em;
 	position: relative;
 }
 
 .stand {
-	max-width: 547px;
+	width: 30em;
 	position: relative;
 }
 
 .stand-bg, .prem-bg {
-	width: 547px;
-	height: 587px;
+	width: 30em;
+	height: 32.5em;
+	display: flex;
+	/* justify-content: center; */
 }
 
 .stand-content, .prem-content {
-	display: flex;
-	flex-direction: column;
 	position: absolute;
 	top: 120px;
-	left: 62px;
+	width: 30em;
+	text-align: center;
+	/* margin-left: auto;
+	margin-right: auto; */
 }
 
 .stand-content .jumbo-text,
@@ -349,13 +387,14 @@ form .submit:hover {
 	margin: 0px;
 }
 
-.stand-content p, .prem-content p {
+/* .stand-content p, .prem-content p {
 	margin: 10px 0px 0px 2px;
-}
+} */
 
 .stand-content .side-lines,
 .prem-content .side-lines {
 	border: 1px solid #ffffff;
+	margin: 0 auto;
 }
 
 .badge {
@@ -368,10 +407,6 @@ form .submit:hover {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
-
-.prem-content {
-	margin-right: 25px;
 }
 
 .campaign-slider {
@@ -426,27 +461,30 @@ form .submit:hover {
 	margin-bottom: 20px;
 }
 
-.list-row div {
-	width: 180px;
-	height: 140px;
+.list-row .channel {
+	width: 10em;
+	height: 7.5em;
 	text-align: center;
 	border-left: 1px solid #ccc;
 	border-top: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
+	cursor: pointer;
 }
 
 .list-row .all-borders {
 	border-right: 1px solid #ccc;
 }
 
-.list-row div .fa-search {
+/* .list-row .channel .fa-search {
 	font-size: 2.5em;
 	color: #ccc;
 	margin: 20px auto;
-}
+} */
 
-.list-row div i p {
-	margin: 10px auto;
+.list-row .channel p {
+	/* margin: 10px auto; */
+	font-size: .9em;
+	margin-top: 0px;
 }
 
 div.pre-footer {
@@ -470,8 +508,51 @@ div.pre-footer {
 	flex-direction: column;
 }
 
-.pre-footer-content div span.button-yellow {
-	padding: 15px 30px;
+.pre-footer-content img {
+	opacity: 0.1;
+	width: 75em;
+}
+
+.pre-footer-button, .campaign-button {
+	width: 15em;
+	height: 3em;
+	line-height: 3em;
+	align-items: center;
+	text-align: center;
+	border-radius: 4px;
+	cursor: pointer;
+	display: inline-block;
+}
+
+.pre-footer-button {
+	background: #ffbd00;
+}
+
+.pre-footer-button:hover {
+	background: #ffffff;
+}
+
+.campaign-button {
+	background: #ffffff;
+}
+
+.campaign-button:hover {
+	background: #ffbd00;
+	color: #ffffff;
+}
+
+.frame {
+	width: 10em;
+	height: 5em;
+	overflow: hidden;
+}
+
+.frame img {
+	opacity: 0.2;
+}
+
+.frame img:hover {
+	opacity: 0.5;
 }
 
 /* .pre-footer-content img {

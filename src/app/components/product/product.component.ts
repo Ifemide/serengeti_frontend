@@ -6,6 +6,7 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import { removeSummaryDuplicates } from '@angular/compiler';
 
 @Component({
   selector: 'app-product',
@@ -21,6 +22,7 @@ export class ProductComponent implements OnInit {
   loginReq: any = true;
   showReg: any = false;
   authErrors: any;
+  assets: any;
   // user_email: any = null;
   // user_password: any = null;
   // user_name: any = null;
@@ -41,7 +43,8 @@ export class ProductComponent implements OnInit {
     asset_id: this.id
   };
 
-  constructor(private _route: ActivatedRoute, private _api: ApiService, private _fb: FormBuilder, private _http: HttpClient) {
+  constructor(private _route: ActivatedRoute, private _api: ApiService,
+    private _fb: FormBuilder, private _http: HttpClient) {
 
     this._route.paramMap.subscribe(params => {
       // console.log(params.get('id'));
@@ -52,8 +55,17 @@ export class ProductComponent implements OnInit {
 
     this.asset = this._api.getSingleAsset(this.id)
       .subscribe( (result: any) => {
-        console.log(result);
       this.asset = result.data.attributes;
+    });
+
+    this.assets = this._api.getData().subscribe((result: any) => {
+      this.assets = result.data;
+      for (let foo in this.assets) {
+        if (result.data[foo].id === this.id) {
+          this.assets.splice(foo, 1);
+        }
+      }
+      this.assets.splice(3, this.assets.length - 3);
     });
 
   }
@@ -114,7 +126,7 @@ export class ProductComponent implements OnInit {
   makeBooking() {
     this.booking.asset_id = this.id;
     this._api.makeBookingRequest({booking: this.booking}).subscribe(result => {
-       alert('Your request has been submitted, you will recieve a call from a media planner few minutes');
+       alert('Your request has been submitted, you will recieve a call from an Account Manager few minutes');
        this.closeBookingDialog();
       }
     );

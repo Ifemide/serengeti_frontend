@@ -73,12 +73,14 @@ export class SearchComponent implements OnInit, AfterViewInit {
     this.assets = this._api.getAssets().subscribe(result => {
       this.assets = result;
       this.assets = this.assets.data;
+      console.log(this.assets.data);
     });
   }
 
   listTypes() {
     this._api.getAssetTypes().subscribe((payload: any) => {
       this.assetTypes = payload.data;
+      console.log(this.assetTypes);
     });
     // this.isDataAvailable = true;
   }
@@ -92,6 +94,7 @@ export class SearchComponent implements OnInit, AfterViewInit {
   listGroups() {
     this._api.getAssetGroups().subscribe((result: any) => {
       this.assetGroups = result.data;
+      console.log(this.assetGroups);
     });
   }
 

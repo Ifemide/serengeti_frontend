@@ -166,4 +166,29 @@
    </div>
 
  </form>
+
+ <div class="similar-options">
+    <div class="similar-options-top">
+      <p class="side-line"></p>
+      <h2>Similar Options</h2>
+      <p class="side-line"></p>
+    </div>
+    <div class="similar-options-list">
+      <div class="search-result" *ngFor="let product of assets">
+        <img class="main-img" [src]="product.attributes.asset_image_1">
+        <!-- <img class="certified show" src="assets/award.png"> -->
+        <div class="search-result-text">
+          <h4>{{ product.attributes.title }}</h4>
+          <div class="search-result-details">
+            <p>{{ product.attributes.asset_type_group.title }}</p>
+            <p class="divider">|</p>
+            <p>{{ product.attributes.asset_specification }}</p>
+            <p>|</p>
+            <p>From {{ product.attributes.minimum_price | currency: 'NGN' }}</p>
+          </div>
+          <button>Explore</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

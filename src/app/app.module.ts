@@ -17,7 +17,7 @@ import { CampaignComponent } from './components/campaign/campaign.component';
 import { ManageComponent } from './components/manage/manage.component';
 import { HeaderWhiteComponent } from './components/header-white/header-white.component';
 import { ProductComponent } from './components/product/product.component';
-import { ServicesComponent } from './components/services/services.component';
+import { FaqComponent } from './components/faq/faq.component';
 import { BoardsComponent } from './components/boards/boards.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 
@@ -35,7 +35,7 @@ import { AboutusComponent } from './components/aboutus/aboutus.component';
     ManageComponent,
     HeaderWhiteComponent,
     ProductComponent,
-    ServicesComponent,
+    FaqComponent,
     BoardsComponent,
     AboutusComponent,
   ],
