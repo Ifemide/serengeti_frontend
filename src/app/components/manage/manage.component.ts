@@ -14,7 +14,9 @@ export class ManageComponent implements OnInit {
   public drawer = true;
   public mediaBuyerForm = false;
 
-  constructor(private _api: ApiService, private _route: ActivatedRoute) { }
+  constructor(private _api: ApiService, private _route: ActivatedRoute) {
+    window.scrollTo(0, 0);
+   }
 
   ngOnInit() {
 

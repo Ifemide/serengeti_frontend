@@ -20,15 +20,8 @@ export class ApiService {
 
   }
 
-  getAssets(link) {
-    const i = link.indexOf('?');
-    link = link.substring(i);
-    console.log(this.url + 'assets' + link);
-
-    return this._http.get(this.url + 'assets' + link)
-      .subscribe(resp => {
-          console.log(resp);
-      });
+  getAssets() {
+    return this._http.get(this.url + 'assets/');
   }
 
   getSingleAsset(id) {
@@ -40,17 +33,12 @@ export class ApiService {
     return this._http.get(this.url + f_url);
   }
 
-
   getData() {
-    // return this._http.get('assets/assets.json');
     return this._http.get(this.url + 'assets');
   }
 
-  getBoardTypes() {
-    return this._http.get(this.url + 'assets/?type_id').subscribe(data => {
-      this.temp = data;
-      // console.log(this.temp);
-    });
+  getAssetGroups() {
+    return this._http.get(this.url + 'asset_type_groups');
   }
 
   getAssetTypes() {
@@ -62,26 +50,28 @@ export class ApiService {
   }
 
   getAssetCategories() {
-    return this._http.get(this.url + 'asset_categories')
+    return this._http.get(this.url + 'asset_categories');
   }
 
   getBoardSizes() {
-    return this._http.get(this.url + 'data/board_sizes')
+    return this._http.get(this.url + 'data/board_sizes');
   }
 
   getAssetTypeGroups() {
-    return this._http.get(this.url + 'asset_type_groups')
+    return this._http.get(this.url + 'asset_type_groups');
   }
 
-  loginUser(form){
-    return this._http.post(this.url + 'auth/sign_in', form, {observe: 'response'})
+  loginUser(form) {
+    return this._http.post(this.url + 'auth/sign_in', form, {observe: 'response'});
   }
 
-  registerUser(form){
-    return this._http.post(this.url + 'auth', form, {observe: 'response'})
+  registerUser(form) {
+    return this._http.post(this.url + 'auth', form, {observe: 'response'});
   }
 
-  makeBookingRequest(form){
-    return this._http.post(this.url + 'bookings', form, { observe: 'response', headers: JSON.parse(localStorage.getItem('PLU:authHeaders'))})
+  makeBookingRequest(form) {
+    return this._http.post(this.url + 'bookings', form, { observe: 'response',
+    headers: JSON.parse(localStorage.getItem('PLU:authHeaders'))});
   }
+
 }

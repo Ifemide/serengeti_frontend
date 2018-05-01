@@ -29,11 +29,6 @@
 	color: #1d1c21;
 }
 
-.menu ul li.sell-board:hover {
-	background: #ffbd00;
-	color: #ffffff;
-}
-
 .menu-button {
 	width: 15em;
 	height: 3em;
@@ -43,4 +38,16 @@
 	border-radius: 4px;
 	text-transform: uppercase;
 	cursor: pointer;
+}
+
+.menu .button-yellow {
+	background: #ffbd00;
+}
+
+.menu .button-yellow:hover {
+	background: #1d1c21;
+}
+
+.menu .button-yellow:hover a {
+	color: #ffffff;
 }

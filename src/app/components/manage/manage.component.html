@@ -12,19 +12,19 @@
       </div>
       <ul class="menu" [ngStyle]="{'margin-right':mediaBuyerForm === true ? '30em' : '0em' }">
           <li>
-            <a routerLink="/">Home</a>
-          </li>
-          <li>
-            <a href="/services">Services</a>
-          </li>
-          <li>
-            <a routerLink="/boards">Boards</a>
-          </li>
-          <li>
-            <a routerLink="/aboutus">About Us</a>
-          </li>
+              <a routerLink="/">Home</a>
+            </li>
+            <li>
+              <a routerLink="/boards">Boards</a>
+            </li>
+            <li>
+              <a routerLink="/aboutus">About Us</a>
+            </li>
+            <li>
+              <a routerLink="/faq">FAQs</a>
+            </li>
         <li class="menu-button button button-white">
-          <a routerLink="/">Sell a Board</a>
+          <a routerLink="/merchant">Sell a Board</a>
         </li>
       </ul>
     </div>
@@ -50,7 +50,7 @@
   <div class="manage-buttons" [ngStyle]="{'right':mediaBuyerForm === true ? '30em' : '0em' }">
     <p routerLink="/search">Pick a Board</p>
     <p routerLink="/campaign">Start a PRO-ad</p>
-    <p (click)="showMediaBuyerForm()">Talk to a Media Planner</p>
+    <p (click)="showMediaBuyerForm()">Talk to an Account Manager</p>
   </div>
   </div>
 

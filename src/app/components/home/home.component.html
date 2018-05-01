@@ -14,16 +14,7 @@
         <br>performance display ads, powered by precise data</p>
 
       <form [formGroup]="myform" (ngSubmit)="queryDB(myform)">
-          <div class="location">
-              <input name="area" formControlName="area" placeholder="Type preferred location">
-            </div>
-        <!-- <select >
-          <option value="">Choose location for your advert</option>
-          <option value="VI">Victoria Island</option>
-          <option value="YB">Yaba</option>
-          <option value="LK">Lekki</option>
-          <option value="IK">Ikeja</option>
-        </select> -->
+        <input type="text" class="location" name="area" formControlName="area" placeholder="Enter a location for your advert">
         <select class="adtype" name="adtype" formControlName="adtype">
           <option value="">Choose Category</option>
           <option value="1">Board</option>
@@ -40,7 +31,7 @@
            {{myform | json}}
         -->
       </form>
-      <a>Talk to a Media Planner</a>
+      <a>Talk to an Account Manager</a>
     </div>
   </div>
 </div>
@@ -95,41 +86,56 @@
     <div class="section-aside right-30">
       <div class="left-row-one down-30">
         <div class="img-large-h">
-          <p class="desc-text">Flag Poles
-            <br>
-            <span>2965</span>
-          </p>
+          <img src="assets/wall-screens.png" alt="">
+          <div class="overlay-large-h">
+            <p class="desc-text">Wall Screens
+              <br>
+              <span>1,963</span>
+            </p>
+          </div>
         </div>
         <!-- <img src="assets/wall screens.png" alt="" class="img-large-h"> -->
       </div>
       <div class="left-row-two down-30">
         <div class="img-small">
-          <p class="desc-text">Flag Poles
-            <br>
-            <span>2,965</span>
-          </p>
+          <img src="assets/flag-poles.png" alt="">
+          <div class="overlay-small">
+            <p class="desc-text">Flag Poles
+              <br>
+              <span>2,965</span>
+            </p>
+          </div>
         </div>
         <div class="img-small">
-          <p class="desc-text">Gantry
-            <br>
-            <span>1,356</span>
-          </p>
+          <img src="assets/gantry.png" alt="">
+          <div class="overlay-small">
+            <p class="desc-text">Gantry
+              <br>
+              <span>1,356</span>
+            </p>
+          </div>
         </div>
         <!-- <div><img src="assets/mobile screens.png" alt="" class="img-small"></div> -->
         <!-- <div><img src="assets/mobile screens.png" alt="" class="img-small"></div> -->
       </div>
       <div class="left-row-three">
         <div class="img-small">
-          <p class="desc-text">Others
-            <br>
-            <span>2,965</span>
-          </p>
+          <img src="assets/billboard.png" alt="">
+          <div class="overlay-small">
+            <p class="desc-text">Others
+              <br>
+              <span>2,965</span>
+            </p>
+          </div>
         </div>
         <div class="img-small">
-          <p class="desc-text">LED Cube
-            <br>
-            <span>2,965</span>
-          </p>
+          <img src="assets/cube.png" alt="">
+          <div class="overlay-small">
+            <p class="desc-text">LED Cube
+              <br>
+              <span>2,965</span>
+            </p>
+          </div>
         </div>
         <!-- <img src="assets/mobile screens.png" alt="" class="img-small"> -->
         <!-- <img src="assets/mobile screens.png" alt="" class="img-small"> -->
@@ -139,34 +145,46 @@
       <div class="right-row-one down-30">
         <div class="right-row-one-group">
           <div class="img-small down-30">
-            <p class="desc-text">Mobile Screens
-              <br>
-              <span>325</span>
-            </p>
+            <img src="assets/mobile-screens.png" alt="">
+            <div class="overlay-small">
+              <p class="desc-text">Mobile Screens
+                <br>
+                <span>325</span>
+              </p>
+            </div>
           </div>
           <div class="img-small">
-            <p class="desc-text">Wall Drape
-              <br>
-              <span>479</span>
-            </p>
+            <img src="assets/wall-drapes.png" alt="">
+            <div class="overlay-small">
+              <p class="desc-text">Wall Drapes
+                <br>
+                <span>479</span>
+              </p>
+            </div>
           </div>
           <!-- <img src="assets/mobile screens.png" alt="" class="img-small"> -->
           <!-- <img src="assets/mobile screens.png" alt="" class="img-small"> -->
         </div>
         <div class="img-large-v">
-          <p class="desc-text">Flag Poles
-            <br>
-            <span>2965</span>
-          </p>
+          <img src="assets/digital-screens.png" alt="">
+          <div class="overlay-large-v">
+            <p class="desc-text">Digital Screens
+              <br>
+              <span>2965</span>
+            </p>
+          </div>
         </div>
         <!-- <img src="assets/digital screens.png" alt="" class="img-large-v"> -->
       </div>
       <div class="right-row-two">
         <div class="img-large-h">
-          <p class="desc-text">Flag Poles
-            <br>
-            <span>2965</span>
-          </p>
+          <img src="assets/billboards.png" alt="">
+          <div class="overlay-large-h">
+            <p class="desc-text">Bill Boards
+              <br>
+              <span>2965</span>
+            </p>
+          </div>
         </div>
         <!-- <img src="assets/wall screens.png" alt="" class="img-large-h"> -->
       </div>
@@ -223,11 +241,11 @@
     <div class="start-campaign-content">
       <h2 class="jumbo-small whitish">Reach the right people
         <br>everytime with our
-        <br>PRO-ad tool</h2>
+        <br>PRO-ad tool&nbsp;</h2>
       <p class="whitish">With our PRO-ad tool, you can reach your chosen
         <br> audiene of specific demography across multiple devices
         <br> at your preferred location </p>
-      <div class="button button-white">
+      <div class="campaign-button">
         <p>Start a Campaign</p>
       </div>
     </div>
@@ -239,29 +257,193 @@
     <br>audience channels</p>
   <div class="audience-channel-list">
     <div class="list-row">
-      <div class="">
-        <i class="fas fa-search"></i>
+      <div class="channel" routerLink="/manage">
+        <div class="frame">
+          <img src="assets/svg/automotive.svg" alt="" style="width: 6.5em; margin-top: -.5em">
+        </div>
         <p>Automotive</p>
       </div>
-      <div class="">
-        <i class="fas fa-search"></i>
+      <div class="channel" routerLink="/manage">
+        <div class="frame">
+          <img src="assets/svg/beauty.svg" alt="" style="width: 4em; margin-top: .5em">
+        </div>
         <p>Beauty</p>
       </div>
-      <div class="">
-        <i class="fas fa-search"></i>
+      <div class="channel" routerLink="/manage">
+        <div class="frame">
+          <img src="assets/svg/boating.svg" alt="" style="width: 5em; margin-top: 0em">
+        </div>
         <p>Boating</p>
       </div>
-      <div class="">
-        <i class="fas fa-search"></i>
+      <div class="channel" routerLink="/manage">
+        <div class="frame">
+          <img src="assets/svg/books.svg" alt="" style="width: 5em; margin-top: 1em">
+        </div>
         <p>Books</p>
       </div>
-      <div class="">
-        <i class="fas fa-search"></i>
+      <div class="channel" routerLink="/manage">
+        <div class="frame">
+          <img src="assets/svg/business.svg" alt="" style="width: 4em; margin-top: 1.5em">
+        </div>
         <p>Business</p>
       </div>
-      <div class="all-borders">
-        <i class="fas fa-search"></i>
-        <p>Business Opportunities</p>
+      <div class="channel all-borders" routerLink="/manage">
+        <div class="frame">
+          <img src="assets/svg/business-opp.svg" alt="" style="width: 4em; margin-top: 1em">
+        </div>
+        <p>Business Opportunites</p>
+      </div>
+    </div>
+    <div class="list-row">
+      <div class="channel" routerLink="/manage">
+        <div class="frame">
+          <img src="assets/svg/college-stu.svg" alt="" style="width: 4em; margin-top: .5em">
+        </div>
+        <p>College Students</p>
+      </div>
+      <div class="channel" routerLink="/manage">
+        <div class="frame">
+          <img src="assets/svg/consumer-elect.svg" alt="" style="width: 4em; margin-top: .5em">
+        </div>
+        <p>Consumer Electronics</p>
+      </div>
+      <div class="channel" routerLink="/manage">
+        <div class="frame">
+          <img src="assets/svg/education.svg" alt="" style="width: 4em; margin-top: .5em">
+        </div>
+        <p>Education</p>
+      </div>
+      <div class="channel" routerLink="/manage">
+        <div class="frame">
+          <img src="assets/svg/employment.svg" alt="" style="width: 3.5em; margin-top: 1.25em">
+        </div>
+        <p>Employment</p>
+      </div>
+      <div class="channel" routerLink="/manage">
+        <div class="frame">
+          <img src="assets/svg/entertainment.svg" alt="" style="width: 5em; margin-top: 0em">
+        </div>
+        <p>Entertainment</p>
+      </div>
+      <div class="channel all-borders" routerLink="/manage">
+        <div class="frame">
+          <img src="assets/svg/family-par.svg" alt="" style="width: 4em; margin-top: 1em">
+        </div>
+        <p>Family & Parenting</p>
+      </div>
+    </div>
+    <div class="list-row">
+      <div class="channel" routerLink="/manage">
+        <div class="frame">
+          <img src="assets/svg/fashion.svg" alt="" style="width: 4em; margin-top: .5em">
+        </div>
+        <p>Fashion</p>
+      </div>
+      <div class="channel" routerLink="/manage">
+        <div class="frame">
+          <img src="assets/svg/fitness.svg" alt="" style="width: 5em; margin-top: .5em">
+        </div>
+        <p>Fitness</p>
+      </div>
+      <div class="channel" routerLink="/manage">
+        <div class="frame">
+          <img src="assets/svg/food.svg" alt="" style="width: 4.5em; margin-top: .5em">
+        </div>
+        <p>Food</p>
+      </div>
+      <div class="channel" routerLink="/manage">
+        <div class="frame">
+          <img src="assets/svg/golf.svg" alt="" style="width: 4.5em; margin-top: .75em">
+        </div>
+        <p>Golf</p>
+      </div>
+      <div class="channel" routerLink="/manage">
+        <div class="frame">
+          <img src="assets/svg/health.svg" alt="" style="width: 4.5em; margin-top: 1em">
+        </div>
+        <p>Health</p>
+      </div>
+      <div class="channel all-borders" routerLink="/manage">
+        <div class="frame">
+          <img src="assets/svg/home-garden.svg" alt="" style="width: 4em; margin-top: 1em">
+        </div>
+        <p>Home & Garden</p>
+      </div>
+    </div>
+    <div class="list-row">
+      <div class="channel" routerLink="/manage">
+        <div class="frame">
+          <img src="assets/svg/motorcycles.svg" alt="" style="width: 5em; margin-top: .5em">
+        </div>
+        <p>Motocycles</p>
+      </div>
+      <div class="channel" routerLink="/manage">
+        <div class="frame">
+          <img src="assets/svg/music.svg" alt="" style="width: 4.5em; margin-top: .5em">
+        </div>
+        <p>Music</p>
+      </div>
+      <div class="channel" routerLink="/manage">
+        <div class="frame">
+          <img src="assets/svg/news.svg" alt="" style="width: 4em; margin-top: .75em">
+        </div>
+        <p>News</p>
+      </div>
+      <div class="channel" routerLink="/manage">
+        <div class="frame">
+          <img src="assets/svg/outdoor-rec.svg" alt="" style="width: 5em; margin-top: 1em">
+        </div>
+        <p>Outdoor Recreation</p>
+      </div>
+      <div class="channel" routerLink="/manage">
+        <div class="frame">
+          <img src="assets/svg/personal-fin.svg" alt="" style="width: 4em; margin-top: 1em">
+        </div>
+        <p>Personal Finance</p>
+      </div>
+      <div class="channel all-borders" routerLink="/manage">
+        <div class="frame">
+          <img src="assets/svg/pets.svg" alt="" style="width: 4.5em; margin-top: .75em">
+        </div>
+        <p>Pets</p>
+      </div>
+    </div>
+    <div class="list-row">
+      <div class="channel" routerLink="/manage">
+        <div class="frame">
+          <img src="assets/svg/real-estate.svg" alt="" style="width: 4em; margin-top: 1em">
+        </div>
+        <p>Real Estate</p>
+      </div>
+      <div class="channel" routerLink="/manage">
+        <div class="frame">
+          <img src="assets/svg/sports.svg" alt="" style="width: 3.5em; margin-top: 1.25em">
+        </div>
+        <p>Sports</p>
+      </div>
+      <div class="channel" routerLink="/manage">
+        <div class="frame">
+          <img src="assets/svg/travel.svg" alt="" style="width: 5.5em; margin-top: .25em">
+        </div>
+        <p>Travel</p>
+      </div>
+      <div class="channel" routerLink="/manage">
+        <div class="frame">
+          <img src="assets/svg/technology.svg" alt="" style="width: 4em; margin-top: 1em">
+        </div>
+        <p>Technology</p>
+      </div>
+      <div class="channel" routerLink="/manage">
+        <div class="frame">
+          <img src="assets/svg/webmaster.svg" alt="" style="width: 5em; margin-top: .5em">
+        </div>
+        <p>Webmaster</p>
+      </div>
+      <div class="channel all-borders" routerLink="/manage">
+        <div class="frame">
+          <img src="assets/svg/weddings.svg" alt="" style="width: 5em; margin-top: .5em">
+        </div>
+        <p>Weddings</p>
       </div>
     </div>
   </div>
@@ -269,12 +451,12 @@
 
 <div class="pre-footer section-head">
   <div class="pre-footer-content">
-    <!-- <img src="assets/logo.png" alt=""> -->
+    <img src="assets/logo.png" alt="">
     <div>
       <h1 class="jumbo-text whitish">Do you Own any Outdor Assets?</h1>
       <h5 class="whitish">Find out why over 1,432 Asset Owners trust Prideland.ng</h5>
       <p>
-        <span class="button button-yellow">Add Your Media Asset</span>
+        <span class="pre-footer-button">Add Your Media Asset</span>
       </p>
     </div>
   </div>

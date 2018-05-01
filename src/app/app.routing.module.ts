@@ -1,6 +1,6 @@
 import { BoardsComponent } from './components/boards/boards.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
-import { ServicesComponent } from './components/services/services.component';
+import { FaqComponent } from './components/faq/faq.component';
 import { ManageComponent } from './components/manage/manage.component';
 import { ProductComponent } from './components/product/product.component';
 import { SearchComponent } from './components/search/search.component';
@@ -40,8 +40,8 @@ const routes: Routes = [
         component: ManageComponent
     },
     {
-        path: 'services',
-        component: ServicesComponent
+        path: 'faq',
+        component: FaqComponent
     },
     {
         path: 'boards',

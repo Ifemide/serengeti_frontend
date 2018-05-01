@@ -6,50 +6,48 @@
   <div class="product-wrapper">
     <div class="product-wrapper-top">
       <div class="product-img">
-        <img class="main-img-lg" src="{{ asset.data.attributes.asset_image_1 }}">
-        <!-- <img class="certified-lg show" src="assets/award.png"> 
-          src="assets/background.png" -->
+        <img class="main-img-lg" src="{{ asset.asset_image_1 }}">
       </div>
       <div class="product-details">
-        <h2>{{ asset.data.attributes.title }}</h2>
+        <h2>{{ asset.title }}</h2>
         <div class="type-location">
-          <p>{{ asset.data.attributes.asset_type_group.title }}</p>
+          <p>{{ asset.asset_type_group.title }}</p>
           <p class="divider-lg">|</p>
-          <p>{{ asset.data.attributes.category.title }}</p>
+          <p>{{ asset.category.title }}</p>
           <p class="divider-lg">|</p>
-          <p>{{ asset.data.attributes.location }}</p>
+          <p>{{ asset.location }}</p>
         </div>
         <div class="main-desc">
           <p class="bold">Description</p>
-          <p class="normal">{{ asset.data.attributes.description }}</p>
+          <p class="normal">{{ asset.description }}</p>
         </div>
         <div class="size-price">
           <div>
             <p class="bold">Size</p>
-            <!-- {{ asset.attributes. }} -->
-            <p class="normal">{{ asset.data.attributes.asset_specification }}</p>
+            <!-- {{ asset. }} -->
+            <p class="normal">{{ asset.asset_specification }}</p>
           </div>
           <p class="line-divider"></p>
           <div>
             <p class="bold">Bidding Price</p>
-            <p class="normal">{{ asset.data.attributes.minimum_price }}</p>
+            <p class="normal">{{ asset.minimum_price }}</p>
           </div>
         </div>
         <div class="crowd-eyes">
           <div>
             <p class="bold">Crowd Analytics</p>
-            <p class="normal">{{ asset.data.attributes.crowd_analytics }} per hour</p>
+            <p class="normal">{{ asset.crowd_analytics }} per hour</p>
           </div>
           <p class="line-divider"></p>
           <div>
             <p class="bold">Eyeballs per Day</p>
-            <p class="normal">{{ asset.data.attributes.eyeballs_per_day }}</p>
+            <p class="normal">{{ asset.eyeballs_per_day }}</p>
           </div>
         </div>
         <div class="audience-time">
           <div>
             <p class="bold">Proposed Audience Pack</p>
-            <p class="normal">{{ asset.data.attributes.proposed_audience_pack }}</p>
+            <p class="normal">{{ asset.proposed_audience_pack }}</p>
           </div>
           <p class="line-divider"></p>
           <div>
@@ -60,7 +58,7 @@
         <div class="map-crowd">
           <div>
             <p class="bold">Map Coordinates</p>
-            <p class="normal">{{ asset.data.attributes.latlng }}</p>
+            <p class="normal">{{ asset.latlng }}</p>
           </div>
           <p class="line-divider"></p>
           <div>
@@ -73,7 +71,7 @@
     <div class="product-wrapper-bottom">
       <div>
         <p class="normal bid-button" (click)="showMediaBuyerForm()">
-          Make Request &nbsp; <span> {{ asset.data.attributes.minimum_price | currency: 'NGN' }}</span>
+          Make Request &nbsp; <span> {{ asset.minimum_price | currency: 'NGN' }}</span>
         </p>
         <!-- <p>♥</p> -->
       </div>
@@ -127,13 +125,13 @@
 
      <div class="selected" *ngIf="asset.id > 0">
        <p>Board Campaign</p>
-       <p class="title">{{ asset.attributes.title }}</p>
+       <p class="title">{{ asset.title }}</p>
        <div>
-         <p>{{ asset.attributes.asset_type_group.title }}</p>
+         <p>{{ asset.asset_type_group.title }}</p>
          <p class="divider"></p>
-         <p>{{ asset.attributes.category.title }}</p>
+         <p>{{ asset.category.title }}</p>
          <p class="divider"></p>
-         <p>{{ asset.attributes.location }}</p>
+         <p>{{ asset.location }}</p>
        </div>
        <p class="change" routerLink="/search">change</p>
      </div>
@@ -168,4 +166,29 @@
    </div>
 
  </form>
+
+ <div class="similar-options">
+    <div class="similar-options-top">
+      <p class="side-line"></p>
+      <h2>Similar Options</h2>
+      <p class="side-line"></p>
+    </div>
+    <div class="similar-options-list">
+      <div class="search-result" *ngFor="let product of assets">
+        <img class="main-img" [src]="product.attributes.asset_image_1">
+        <!-- <img class="certified show" src="assets/award.png"> -->
+        <div class="search-result-text">
+          <h4>{{ product.attributes.title }}</h4>
+          <div class="search-result-details">
+            <p>{{ product.attributes.asset_type_group.title }}</p>
+            <p class="divider">|</p>
+            <p>{{ product.attributes.asset_specification }}</p>
+            <p>|</p>
+            <p>From {{ product.attributes.minimum_price | currency: 'NGN' }}</p>
+          </div>
+          <button>Explore</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
