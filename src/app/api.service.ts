@@ -16,7 +16,7 @@ export class ApiService {
   constructor(private _http: HttpClient) {
 
     // this.url = 'http://localhost:3000/api/';
-    this.url = 'http://api-v1.prideland.ng/api/';
+    this.url = 'https://api.prideland.ng/api/';
 
   }
 
