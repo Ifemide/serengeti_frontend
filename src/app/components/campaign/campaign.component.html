@@ -3,7 +3,57 @@
 </div>
 
 <div class="container">
+  <div class="apply-modal" id="upload-container" *ngIf="loginReq">
+    <div id="welcome-container">
+      <div id="title-bar">
+        <h2 id="welcome-title">{{showReg ? "Register" : "Login"}}</h2>
+             <div class="logo-group">
+              <img src="/assets/shape.png">
+              <img src="/assets/pride-land.png">
+            </div>
+        </div>
+        <div class="welcome-text">
+          <h3>{{showReg ? "Registration" : "Login"}} is Required.</h3>
+        </div>  
+        <div id="sign-in-form">
+            <div>
+                <div class="form-inputs" *ngIf="showReg">
+                    <div class="form-inputs-col">
+                        <label>Name</label>
+                        <input [(ngModel)]="user.name" type="text" placeholder="Enter full name">
+                    </div>
 
+                    <div class="form-inputs-col">
+                        <label>Phone Number</label>
+                        <input [(ngModel)]="user.phonenumber" type="text" placeholder="+234814672634">
+                    </div>
+                </div>
+
+                <div class="form-inputs">
+                    <div class="form-inputs-col">
+                        <label>Email</label>
+                        <input [(ngModel)]="user.email" type="email" placeholder="Enter email address">
+                    </div>
+                    <div class="form-inputs-col">
+                        <label>Password</label>
+                        <input [(ngModel)]="user.password" type="password" placeholder="********">
+                    </div>
+                </div>
+                <div class="submit">
+                    <button type="submit" (click)="authenticateUser()">{{showReg ? "Register" : "Login"}}</button>
+                </div>
+                <p (click)="showRegister()" style="text-align: center;
+              padding-bottom: 20px;
+              font-weight: bold;
+              color: #ff0099;
+              cursor: pointer;
+              text-decoration: underline;">{{showReg ? "Already have an account ? Login" : "Do not have an account, Register"}}</p>
+              </div>
+        
+        </div>
+    </div>
+  </div>
+  
 <form class="start-campaign">
   <h1>Start a Campaign</h1>
 
@@ -17,7 +67,12 @@
     <div [class.active]="block3" (click)="showBlock3()">
       <p>Details</p>
     </div>
+
     <div [class.active]="block4" (click)="showBlock4()">
+      <p>Advanced</p>
+    </div>
+
+    <div [class.active]="block5" (click)="showBlock5()">
       <p>Submission</p>
     </div>
   </div>
@@ -28,17 +83,17 @@
       <div class="sub-menu-col-content">
         <div class="sub-menu-col col-one">
           <label for="comp-name">Company Name</label>
-          <input id="comp-name" name="comp-name" type="text" placeholder="">
+          <input [(ngModel)]="campaign.company_name"  id="comp-name" name="comp-name" type="text" placeholder="">
 
           <label for="cp-email">Contact Person Email</label>
-          <input id="cp-email" name="cp-email" type="email" placeholder="">
+          <input [(ngModel)]="campaign.contact_person_email"  id="cp-email" name="cp-email" type="email" placeholder="">
         </div>
         <div class="sub-menu-col col-two">
           <label for="cp-name">Contact Person Name</label>
-          <input id="cp-name" name="cp-name" type="text" placeholder="">
+          <input [(ngModel)]="campaign.contact_person_name" id="cp-name" name="cp-name" type="text" placeholder="">
 
           <label for="cp-number">Contact Person Phone Number</label>
-          <input id="cp-number" name="cp-number" type="number" placeholder="">
+          <input [(ngModel)]="campaign.contact_person_number"  id="cp-number" name="cp-number" type="number" placeholder="">
         </div>
       </div>
     </div>
@@ -51,14 +106,14 @@
           <input id="brand" name="brand" type="text" placeholder="">
 
           <label for="camp-name">Campaign Name</label>
-          <input id="camp-name" name="camp-name" type="text" placeholder="">
+          <input [(ngModel)]="campaign.campaign_name" id="camp-name" name="camp-name" type="text" placeholder="">
         </div>
         <div class="sub-menu-col col-two">
           <label for="start-date">Start Date</label>
-          <input id="start-date" name="start-date" type="date" placeholder="">
+          <input [(ngModel)]="campaign.start_date"  id="start-date" name="start-date" type="date" placeholder="">
 
           <label for="end-date">End Date</label>
-          <input id="end-date" name="end-date" type="date" placeholder="">
+          <input [(ngModel)]="campaign.end_date" id="end-date" name="end-date" type="date" placeholder="">
         </div>
       </div>
     </div>
@@ -66,63 +121,38 @@
   </div>
 
   <div *ngIf="block2">
-    <div class="sub-menu">
-      <p class="sub-menu-header">Campaign Measurement</p>
-      <div class="sub-menu-col-content">
-        <div class="sub-menu-col-one">
-          <input id="proximity" name="measurement" type="checkbox">
-          <label for="proximity">Proximity</label>
-
-          <input id="footfall" name="measurement" type="checkbox">
-          <label for="footfall">Footfall</label>
-
-          <input id="device-path" name="measurement" type="checkbox">
-          <label for="device-path">PATH - Collect Device ID's to retarget in THIS campaign</label>
-
-          <input id="audience" name="measurement" type="checkbox">
-          <label for="audience">Audience</label>
-        </div>
-      </div>
-    </div>
 
     <div class="sub-menu">
       <p class="sub-menu-header">Demographic Details</p>
       <div class="sub-menu-col-content">
         <div class="sub-menu-3col col-1">
           <p>Gender</p>
-          <input id="male" name="gender" type="checkbox">
+          <input (change)="updateCampaignProperty('male', 'gender')" id="male" name="gender" type="checkbox">
           <label for="male">Male</label>
 
-          <input id="female" name="gender" type="checkbox">
+          <input (change)="updateCampaignProperty('female', 'gender')" id="female" name="gender" type="checkbox">
           <label for="female">Female</label>
         </div>
         <div class="sub-menu-3col col-2">
           <p>Age Group Target</p>
-          <input id="all-ages" name="age-group" type="checkbox">
+          <input (change)="updateCampaignProperty('All Ages', 'age_group')" id="all-ages" name="age-group" type="checkbox">
           <label for="all-ages">All Ages</label>
 
-          <input id="to24" name="age-group" type="checkbox">
+          <input (change)="updateCampaignProperty('16 - 24', 'age_group')" id="to24" name="age-group" type="checkbox">
           <label for="to24">16-24</label>
 
-          <input id="to34" name="age-group" type="checkbox">
+          <input (change)="updateCampaignProperty('25 - 34', 'age_group')" id="to34" name="age-group" type="checkbox">
           <label for="to34">25-34</label>
 
-          <input id="to44" name="age-group" type="checkbox">
+          <input (change)="updateCampaignProperty('35 - 44', 'age_group')" id="to44" name="age-group" type="checkbox">
           <label for="to44">35-44</label>
         </div>
         <div class="sub-menu-3col col-3">
-          <p>Interests</p>
-          <select name="interest-cats">
-            <option value="">Select interest categories..</option>
-            <option value="ent">entertainment</option>
-            <option value="sport">sports</option>
-            <option value="bank">banking</option>
-            <option value="edu">education</option>
-            <option value="health">health</option>
+          <p>Select Interest Category</p>
+          <select multiple [(ngModel)]="campaign.interests" name="interest-cats">
+            <option *ngFor='let ci of campaign_interests' [value]='ci'>{{ci}}</option>
           </select>
-          <p class="interest">entertainment</p>
-          <p class="interest">sports</p>
-          <p class="interest">banking</p>
+          <p *ngFor='let ci of campaign.interests' class="interest" style="margin-left: 2px;">{{ci}}</p>
         </div>
       </div>
     </div>
@@ -134,55 +164,38 @@
       </p>
 
       <div class="sub-menu-row-content">
-        <div class="sub-menu-row row-one">
+        <div class="sub-menu-row row-one" *ngFor="let scl of campaign.selected_locations">
+          <div>
+            <label for="gps-location">Name</label>
+            <input readonly [value]="scl.name" id="gps-location" type="text" name="gps-name">
+          </div>
           <div>
             <label for="gps-location">Location</label>
-            <input id="gps-location" type="text" name="gps-location">
+            <input readonly [value]="scl.location" id="gps-location" type="text" name="gps-location">
+          </div>  
+          <div>
+            <label for="latitude">Lng / Lat</label>
+            <input readonly [value]="scl.latlng" id="latitude" type="text" name="latitude">
           </div>
           <div>
-            <label for="latitude">Latitude</label>
-            <input id="latitude" type="text" name="latitude">
+            <label for="longitude">Peak Period and Days</label>
+            <input readonly [value]="scl.peak_preiod_and_days" id="longitude" type="text" name="longitude">
           </div>
           <div>
-            <label for="longitude">Longitude</label>
-            <input id="longitude" type="text" name="longitude">
-          </div>
-          <div>
-            <label for="geo-radius">Geo Location Radius</label>
-            <input id="geo-radius" type="text" name="geo-radius">
+            <label for="geo-radius">Type</label>
+            <input readonly [value]="scl.location_type" id="geo-radius" type="text" name="geo-radius">
           </div>
         </div>
         <div class="sub-menu-row row-two">
-          <select name="ad-area">
-            <option value="">Choose Location..</option>
-            <option value="vi">Victoria Island</option>
+          <select [(ngModel)]="selected_campaign_locations" (change)="mapSelectedCampaignLocationIntoArrOfObject()" multiple name="ad-area" style="width: 700px; height: auto;">
+            <option *ngFor="let cl of campaign_locations" [value]="cl.id">{{cl.name}}, {{cl.location}}</option>
           </select>
-          <button class="add-new">+ Add New</button>
         </div>
+        <!-- <button (click)="mapSelectedCampaignLocationIntoArrOfObject()" class="add-new">+ Add New</button> -->
+
       </div>
     </div>
 
-    <div class="sub-menu">
-      <p class="sub-menu-header">Campaign Measurement</p>
-      <div class="sub-menu-col-content">
-        <div class="sub-menu-col col-one">
-          <input id="ctr" name="measure-ment" type="checkbox">
-          <label for="ctr">CTR%</label>
-
-          <input id="foot-fall" name="measure-ment" type="checkbox">
-          <label for="foot-fall">Footfall</label>
-
-          <input id="uniques" name="measure-ment" type="checkbox">
-          <label for="uniques">Uniques</label>
-
-          <input id="vvtr" name="measure-ment" type="checkbox">
-          <label for="vvtr">Video View Through Rate</label>
-
-          <input id="leads" name="measure-ment" type="checkbox">
-          <label for="leads">Leads</label>
-        </div>
-      </div>
-    </div>
     <button (click)="showBlock1()">PREV</button> <button (click)="showBlock3()">NEXT</button>
   </div>
    
@@ -192,11 +205,11 @@
       <div class="sub-menu-col-content">
         <div class="sub-menu-col col-one">
           <label for="gross-digital">Gross Budget (Digital)</label>
-          <input id="gross-digital" name="gross-digital" type="number" placeholder="">
+          <input [(ngModel)]="campaign.gross_budget_digital"id="gross-digital" name="gross-digital" type="number" placeholder="">
         </div>
         <div class="sub-menu-col col-two">
           <label for="gross-sms">Gross Budget (SMS)</label>
-          <input id="gross-sms" name="gross-sms" type="number" placeholder="">
+          <input [(ngModel)]="campaign.gross_budget_sms"id="gross-sms" name="gross-sms" type="number" placeholder="">
         </div>
       </div>
     </div>
@@ -206,31 +219,33 @@
       <div class="sub-menu-col-content">
         <div class="sub-menu-col col-one">
           <p>Creative AD Format</p>
-          <input id="ctr" name="measure-ment" type="checkbox">
+          <input (change)="updateCampaignProperty('Standard Banners', 'creative_ad_format')" id="ctr" name="measure-ment" type="checkbox">
           <label for="ctr">Standard Banners</label>
 
-          <input id="foot-fall" name="measure-ment" type="checkbox">
+          <input (change)="updateCampaignProperty('Richmedia (JS Tag using third party)', 'creative_ad_format')" id="foot-fall" name="measure-ment" type="checkbox">
           <label for="foot-fall">Richmedia (JS Tag using third party)</label>
 
-          <input id="uniques" name="measure-ment" type="checkbox">
+          <input (change)="updateCampaignProperty('Video', 'creative_ad_format')" id="uniques" name="measure-ment" type="checkbox">
           <label for="uniques">Video</label>
 
-          <input id="vvtr" name="measure-ment" type="checkbox">
+          <input (change)="updateCampaignProperty('Native', 'creative_ad_format')" id="vvtr" name="measure-ment" type="checkbox">
           <label for="vvtr">Native</label>
         </div>
         <div class="sub-menu-col col-two">
-          <p>Gender</p>
+            <label for="dest-link">Destination Link</label><br>
+            <input id="dest-link" type="text" name="dest-link">
+          <!-- <p>Gender</p>
           <input id="male" name="gender" type="checkbox">
           <label for="male">Male</label>
 
           <input id="female" name="gender" type="checkbox">
-          <label for="female">Female</label>
+          <label for="female">Female</label> -->
         </div>
       </div>
-      <div class="sub-menu-row row-one margin-top">
+      <!-- <div class="sub-menu-row row-one margin-top">
         <label for="dest-link">Destination Link</label><br>
         <input id="dest-link" type="text" name="dest-link">
-      </div>
+      </div> -->
     </div>
 
     <div class="sub-menu">
@@ -321,14 +336,59 @@
 
     <button (click)="showBlock2()">PREV</button> <button (click)="showBlock4()">NEXT</button>
   </div>
-
   <div *ngIf="block4">
+    <div class="sub-menu">
+      <p class="sub-menu-header">CAMPAIGN MEASUREMENT</p>
+      <div class="sub-menu-col-content">
+        <div class="sub-menu-col-one">
+          <input id="proximity" name="measurement" type="checkbox">
+          <label for="proximity">Proximity</label>
+
+          <input id="footfall" name="measurement" type="checkbox">
+          <label for="footfall">Footfall</label>
+
+          <input id="device-path" name="measurement" type="checkbox">
+          <label for="device-path">PATH - Collect Device ID's to retarget in THIS campaign</label>
+
+          <input id="audience" name="measurement" type="checkbox">
+          <label for="audience">Audience</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-menu">
+      <p class="sub-menu-header">Campaign Measurement</p>
+      <div class="sub-menu-col-content">
+        <div class="sub-menu-col col-one">
+          <input id="ctr" name="measure-ment" type="checkbox">
+          <label for="ctr">CTR%</label>
+
+          <input id="foot-fall" name="measure-ment" type="checkbox">
+          <label for="foot-fall">Footfall</label>
+
+          <input id="uniques" name="measure-ment" type="checkbox">
+          <label for="uniques">Uniques</label>
+
+          <input id="vvtr" name="measure-ment" type="checkbox">
+          <label for="vvtr">Video View Through Rate</label>
+
+          <input id="leads" name="measure-ment" type="checkbox">
+          <label for="leads">Leads</label>
+        </div>
+      </div>
+    </div>
+    <button (click)="showBlock3()">PREV</button> <button (click)="showBlock5()">NEXT</button>
+  </div>
+
+  <div *ngIf="block5">
     <div class="sub-menu">
       <p class="sub-menu-header">This is the Submission Tab</p>  
     </div>
   
-    <button (click)="showBlock3()">PREV</button>
+    <button (click)="showBlock4()">PREV</button>
+    <button (click)="submitCampaign()">Submit</button>
   </div>
 </form>
+
 
 </div>

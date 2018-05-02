@@ -384,26 +384,6 @@ textarea {
 	color: #000000;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .margin-top {
     margin-top: 1em;
 }
@@ -414,4 +394,142 @@ textarea {
 	padding: .75em 1.5em;
 	font-size: 1em;
 	border-radius: 4px;
+}
+
+.apply-modal {
+    /* display: none; */
+    position: fixed; /* Stay in place */
+    z-index: 999999; /* Sit on top */
+    padding-top: 100px !important;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.62); /* Black w/ opacity */
+}
+
+.apply-input {
+	height: 40px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    padding: 5px;
+}
+
+#upload-container {
+	width: 90%;
+	margin: 0 auto;
+	padding: 0em 4em;
+}
+
+#welcome-container {
+	padding: 3em 4em 0em 4em;
+	background-color: white;
+}
+
+#title-bar {
+    display: flex;
+    justify-content: space-between;
+}
+
+#welcome-title {
+    font-size: 2.75em;
+    margin: 0em;
+}
+
+.logo-group {
+    display: flex;
+    align-items: center;
+}
+
+.logo-group img {
+    margin-right: .25em;
+}
+
+.welcome-text {
+	text-align: center;
+}
+
+.welcome-text h2 {
+	margin: 1.8em 0em 1em 0em;
+	font-size: 2.5em;
+}
+
+.welcome-text p {
+	margin-bottom: 4em;
+}
+
+
+.form-inputs {
+    display: flex;
+    justify-content: space-between;
+    height: 12em;
+}
+
+#view-sign-in .form-inputs {
+    height: 7.5em;
+}
+
+.form-inputs label, .form-inputs input {
+    display: block;
+}
+
+.form-inputs-col {
+    width: 30em;
+    height: 8em;
+}
+
+.form-inputs-col input {
+    width: inherit;
+    border: none;
+    border-bottom: 1px solid grey;
+    height: 3em;
+    outline: none;
+    margin-bottom: 1.75em;
+    font-size: 1em;
+}
+
+.form-inputs-col label {
+    color: #56555d;
+}
+
+.form-inputs-col input:active, .form-inputs-col input:focus {
+    border-bottom: 1px solid gold;
+}
+
+.submit {
+    width: 18em;
+    height: 3em;
+    margin: 0 auto;
+}
+
+.submit button {
+    border: none;
+    background: black;
+    color: white;
+    width: 18em;
+    height: 3em;
+    text-shadow: none;
+    font-size: 1em;
+    text-align: center;
+}
+
+.social-box p {
+    width: 18em;
+    height: 3em;
+    line-height: 3em;
+    text-align: center;
+    color: #ffffff;
+    margin: 0 auto;
+    margin-bottom: 1em;
+}
+
+.social-box p.facebook {
+    background: #0d47a1;
+}
+
+.social-box p.google {
+    background: #ce5321;
 }
