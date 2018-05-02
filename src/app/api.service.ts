@@ -15,8 +15,8 @@ export class ApiService {
 
   constructor(private _http: HttpClient) {
 
-    // this.url = 'http://localhost:3000/api/';
-    this.url = 'https://api.prideland.ng/api/';
+    this.url = 'http://localhost:3000/api/';
+    // this.url = 'https://api.prideland.ng/api/';
 
   }
 
@@ -73,5 +73,10 @@ export class ApiService {
     return this._http.post(this.url + 'bookings', form, { observe: 'response',
     headers: JSON.parse(localStorage.getItem('PLU:authHeaders'))});
   }
+
+  getCampaignLocations() {
+    return this._http.get(this.url + 'data/campaign_locations');
+  }
+
 
 }
