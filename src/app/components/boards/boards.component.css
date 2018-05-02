@@ -84,7 +84,7 @@ select[name="adcate"] {
 .filter form {
 	display: flex;
 	flex-direction: column;
-	width: 20em;
+	width: 18em;
 }
 
 .search-results {
@@ -114,7 +114,7 @@ select[name="adcate"] {
 .filter .type-filter .type-filter-top,
 .filter .price-filter .price-filter-top {
 	background: #ffffff;
-	width: 18em;
+	width: 16em;
 	height: 3.5em;
 	padding: 0em 1em;
 	border-radius: 0.5em;
