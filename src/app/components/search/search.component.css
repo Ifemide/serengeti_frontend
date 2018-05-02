@@ -66,7 +66,7 @@ select[name="adcate"] {
 	background: rgba(233, 239, 244, 0.48);
 	/*height: 40em;*/
 	border-radius: 5px;
-	margin-right: 3em;
+	margin-right: 2em;
 	padding: 1em;
 	-webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 	-moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
@@ -76,7 +76,7 @@ select[name="adcate"] {
 .filter form {
 	display: flex;
 	flex-direction: column;
-	width: 20em;
+	width: 18em;
 }
 
 .search-results {
